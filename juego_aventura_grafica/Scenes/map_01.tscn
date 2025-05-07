@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnpe777riasbf"]
+[gd_scene load_steps=5 format=3 uid="uid://dnpe777riasbf"]
 
+[ext_resource type="Script" uid="uid://cayjo3ryb8ojd" path="res://Scrips/map_01.gd" id="1_5230n"]
 [ext_resource type="Texture2D" uid="uid://c0rx0gbddncvu" path="res://Assets/Backgrounds/Map_01.png" id="1_ph8ol"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_pxd2v"]
 [ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://transition_area.tscn" id="3_iq20c"]
 
 [node name="Map_01" type="Node2D"]
+script = ExtResource("1_5230n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(640.5, 362)
@@ -12,13 +14,19 @@ scale = Vector2(1.14375, 1)
 texture = ExtResource("1_ph8ol")
 
 [node name="Player" parent="." instance=ExtResource("2_pxd2v")]
-position = Vector2(200, 496)
+position = Vector2(85, 508)
 scale = Vector2(0.35, 0.35)
 
 [node name="TransitionArea" parent="." instance=ExtResource("3_iq20c")]
 position = Vector2(9, 534)
-target_scene = "res://Scenes/salon_prueba.tscn"
+target_scene = "res://Scenes/map_00.tscn"
 
 [node name="TransitionArea2" parent="." instance=ExtResource("3_iq20c")]
 position = Vector2(1271, 547)
 target_scene = "res://Scenes/map_02.tscn"
+
+[node name="entry_from_map_00" type="Marker2D" parent="."]
+position = Vector2(77, 552)
+
+[node name="entry_from_map_02" type="Marker2D" parent="."]
+position = Vector2(1189, 553)

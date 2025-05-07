@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogManager="*res://Singletons/DialogManager.gd"
+GAMESTATE="*res://Scrips/GameState.gd"
 
 [display]
 

@@ -29,6 +29,7 @@ func show_choice():
 	dialog.popup_centered()
 
 func _on_choice_yes():
+	GAMESTATE.previous_scene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file(target_scene)
 
 func _on_choice_no():
