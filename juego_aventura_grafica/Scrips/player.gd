@@ -4,6 +4,7 @@ const SPEED = 200
 var player_position: Vector2
 #el operador := declara e infiere el tipo de dato, en este caso infiere que es un booleano 
 var moving := false
+var facing_right = true
 
 func _ready():
 	player_position = global_position
@@ -19,10 +20,9 @@ func _physics_process(delta):
 		var direction = (player_position - global_position).normalized()
 		velocity = direction * SPEED
 
-		if direction.x < 0:
-			$AnimatedSprite2D.flip_h = true
-		elif direction.x > 0:
-			$AnimatedSprite2D.flip_h = false
+		if direction.x != 0:
+			facing_right = direction.x > 0
+			$AnimatedSprite2D.flip_h = not facing_right
 
 		if global_position.distance_to(player_position) < 4:
 			moving = false
