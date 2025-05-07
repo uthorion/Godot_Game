@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp1wqm0w7ygb1"]
+
+[ext_resource type="Script" uid="uid://crs3i1pkx1v1" path="res://Scrips/interactive_lamp.gd" id="1_na6qm"]
+[ext_resource type="Texture2D" uid="uid://c0s67mm122mdf" path="res://Assets/Items/lamp.png" id="1_xnlb0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na6qm"]
+size = Vector2(20, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2lo2"]
+size = Vector2(20, 231)
+
+[node name="InteractiveLamp" type="StaticBody2D"]
+script = ExtResource("1_na6qm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xnlb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_na6qm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_q2lo2")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

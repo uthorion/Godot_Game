@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bar1u2h8p4h4p"]
+
+[ext_resource type="Texture2D" uid="uid://osjbagj6kgoi" path="res://Assets/Backgrounds/fondo.png" id="1_lwb7i"]
+[ext_resource type="Script" uid="uid://bh68lar16n0l7" path="res://Scrips/salon_prueba.gd" id="1_xw4nf"]
+[ext_resource type="PackedScene" uid="uid://cp1wqm0w7ygb1" path="res://Objects/interactive_lamp.tscn" id="2_saufs"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="3_m48ot"]
+
+[node name="Salon_prueba" type="Node2D"]
+script = ExtResource("1_xw4nf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(643.5, 361)
+scale = Vector2(1.14375, 1)
+texture = ExtResource("1_lwb7i")
+
+[node name="InteractiveLamp" parent="." instance=ExtResource("2_saufs")]
+position = Vector2(1062, 342)
+scale = Vector2(1.8, 1.8)
+
+[node name="Player" parent="." instance=ExtResource("3_m48ot")]
+position = Vector2(140, 407)
+scale = Vector2(0.5, 0.5)
