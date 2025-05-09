@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 200
+const SPEED = 400
 var player_position: Vector2
 #el operador := declara e infiere el tipo de dato, en este caso infiere que es un booleano 
 var moving := false

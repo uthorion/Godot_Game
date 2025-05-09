@@ -26,8 +26,5 @@ scale = Vector2(0.35, 0.35)
 position = Vector2(1273, 480)
 target_scene = "res://Scenes/map_01.tscn"
 
-[node name="Entry_from_map_01" type="Marker2D" parent="."]
+[node name="entry_from_map_01" type="Marker2D" parent="."]
 position = Vector2(1182, 492)
-
-[node name="Entry_from_map_00" type="Marker2D" parent="."]
-position = Vector2(63, 500)
