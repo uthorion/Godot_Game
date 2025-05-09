@@ -9,17 +9,17 @@
 script = ExtResource("1_wrx0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(640, 358)
-scale = Vector2(1.14107, 1)
+position = Vector2(959.5, 548)
+scale = Vector2(1.71161, 1.52778)
 texture = ExtResource("1_jlmp0")
 
 [node name="Player" parent="." instance=ExtResource("1_fqutl")]
-position = Vector2(84, 513)
+position = Vector2(145, 788)
 scale = Vector2(0.35, 0.35)
 
 [node name="TransitionArea" parent="." instance=ExtResource("2_ogrm6")]
-position = Vector2(9, 564)
+position = Vector2(10, 805)
 target_scene = "res://Scenes/map_01.tscn"
 
 [node name="entry_from_map_01" type="Marker2D" parent="."]
-position = Vector2(76, 548)
+position = Vector2(85, 820)

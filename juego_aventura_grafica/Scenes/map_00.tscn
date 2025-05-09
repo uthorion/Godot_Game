@@ -10,21 +10,21 @@
 script = ExtResource("1_uo0p6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(643.5, 361)
-scale = Vector2(1.14375, 1)
+position = Vector2(960, 539.5)
+scale = Vector2(1.70893, 1.49583)
 texture = ExtResource("2_7u7ch")
 
 [node name="InteractiveLamp" parent="." instance=ExtResource("3_s5kgr")]
-position = Vector2(1062, 342)
+position = Vector2(839, 616)
 scale = Vector2(1.8, 1.8)
 
 [node name="Player" parent="." instance=ExtResource("4_uc0oj")]
-position = Vector2(599, 446)
+position = Vector2(1628, 725)
 scale = Vector2(0.35, 0.35)
 
 [node name="TransitionArea" parent="." instance=ExtResource("5_ke8oh")]
-position = Vector2(1273, 480)
+position = Vector2(1892, 761)
 target_scene = "res://Scenes/map_01.tscn"
 
 [node name="entry_from_map_01" type="Marker2D" parent="."]
-position = Vector2(1182, 492)
+position = Vector2(1799, 764)
