@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://m28twc821w1w"]
 
-[ext_resource type="Script" uid="uid://cbe3jui8pa2dd" path="res://Scrips/main.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://cbe3jui8pa2dd" path="res://Scrips/maps/main.gd" id="1_bo1nx"]
 [ext_resource type="FontFile" uid="uid://dyw18lmwefujw" path="res://Assets/Fonts/comic-sans-ms.ttf" id="2_bo1nx"]
 
 [node name="Main" type="Node2D"]

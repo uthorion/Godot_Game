@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfqr1a7xaiqm5"]
 
 [ext_resource type="Texture2D" uid="uid://qhslhudq5ian" path="res://Assets/Sprites/personaje.png" id="1_5mj4t"]
-[ext_resource type="Script" uid="uid://cbp1uol865t5n" path="res://Scrips/player.gd" id="1_eovys"]
+[ext_resource type="Script" uid="uid://cbp1uol865t5n" path="res://Scrips/Personajes/player.gd" id="1_eovys"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eovys"]
 animations = [{
@@ -17,7 +17,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vb825"]
 size = Vector2(262, 604)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 50
 script = ExtResource("1_eovys")
 metadata/_edit_group_ = true
 

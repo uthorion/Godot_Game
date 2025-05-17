@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2whd83ixrffe"]
+[gd_scene load_steps=4 format=3 uid="uid://b2whd83ixrffe"]
 
 [ext_resource type="Texture2D" uid="uid://bd02lmwhjw1nl" path="res://Assets/Items/chest.png" id="1_dkeof"]
-[ext_resource type="Script" uid="uid://dxf5pxc14mis5" path="res://Scrips/interactive_chest.gd" id="1_uujq2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uujq2"]
-size = Vector2(222, 163)
+[ext_resource type="Script" uid="uid://dxf5pxc14mis5" path="res://Scrips/Interactivos/interactive_chest.gd" id="1_uujq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ccw"]
 size = Vector2(222, 164)
 
 [node name="Interactive_chest" type="StaticBody2D"]
+z_index = 10
 position = Vector2(1, 1)
 script = ExtResource("1_uujq2")
 metadata/_edit_group_ = true
@@ -17,10 +15,6 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(109, 83)
 texture = ExtResource("1_dkeof")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(109, 83.5)
-shape = SubResource("RectangleShape2D_uujq2")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 1)

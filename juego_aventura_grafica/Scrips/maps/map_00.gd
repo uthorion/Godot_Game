@@ -11,7 +11,6 @@ func _ready():
 		# Ubicar al jugador en el punto de entrada correcto
 		player.global_position = marker.global_position
 
-		# Determinar hacia dónde debe mirar según desde dónde vino
 		var viewport_center_x = get_viewport_rect().size.x / 2
 
 		if marker.position.x < viewport_center_x:

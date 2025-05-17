@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c57reu7at2r41"
-path="res://.godot/imported/lupa.png-8f3094711995fc0a17d0fab3ea555131.ctex"
+uid="uid://d2y15u4ftyces"
+path="res://.godot/imported/MouseProvisional.png-e4d59c8bcd7e137b034f91609f05c40a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Cursor/lupa.png"
-dest_files=["res://.godot/imported/lupa.png-8f3094711995fc0a17d0fab3ea555131.ctex"]
+source_file="res://Assets/Mouse/MouseProvisional.png"
+dest_files=["res://.godot/imported/MouseProvisional.png-e4d59c8bcd7e137b034f91609f05c40a.ctex"]
 
 [params]
 
