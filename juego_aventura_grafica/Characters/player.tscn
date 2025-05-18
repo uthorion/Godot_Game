@@ -19,6 +19,7 @@ size = Vector2(262, 604)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 50
+position = Vector2(898, 551)
 script = ExtResource("1_eovys")
 metadata/_edit_group_ = true
 

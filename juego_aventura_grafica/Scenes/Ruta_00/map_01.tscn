@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnpe777riasbf"]
+[gd_scene load_steps=7 format=3 uid="uid://dnpe777riasbf"]
 
 [ext_resource type="Script" uid="uid://cayjo3ryb8ojd" path="res://Scrips/maps/map_01.gd" id="1_5230n"]
 [ext_resource type="Texture2D" uid="uid://c0rx0gbddncvu" path="res://Assets/Backgrounds/Map_01.png" id="1_ph8ol"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_pxd2v"]
 [ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/transition_area.tscn" id="3_iq20c"]
 [ext_resource type="PackedScene" uid="uid://b2whd83ixrffe" path="res://Objects/interactive_chest.tscn" id="5_rct2e"]
+[ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="6_tp66r"]
 
 [node name="Map_01" type="Node2D"]
 script = ExtResource("1_5230n")
@@ -35,3 +36,7 @@ position = Vector2(1822, 818)
 [node name="Interactive_chest" parent="." instance=ExtResource("5_rct2e")]
 position = Vector2(710, 746)
 scale = Vector2(0.65, 0.65)
+
+[node name="NPC_01" parent="." instance=ExtResource("6_tp66r")]
+position = Vector2(1256, 740)
+scale = Vector2(0.35, 0.35)
