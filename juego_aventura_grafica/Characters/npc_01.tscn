@@ -1,23 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://job6tyfgf7eb"]
+[gd_scene load_steps=5 format=3 uid="uid://job6tyfgf7eb"]
 
 [ext_resource type="Script" uid="uid://clrnk11ud3uxg" path="res://Scrips/Personajes/npc_01.gd" id="1_4ioe5"]
 [ext_resource type="Texture2D" uid="uid://cwvnl0ybqwre5" path="res://Assets/Sprites/NPC_01.png" id="1_qm553"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ioe5"]
-size = Vector2(260, 601)
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ioe5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qm553")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm553"]
+size = Vector2(262, 604)
 
 [node name="NPC_01" type="StaticBody2D"]
+position = Vector2(967, 535)
 script = ExtResource("1_4ioe5")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_qm553")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, 4)
+sprite_frames = SubResource("SpriteFrames_4ioe5")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -0.5)
-shape = SubResource("RectangleShape2D_4ioe5")
+position = Vector2(-4, 2)
+shape = SubResource("RectangleShape2D_qm553")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

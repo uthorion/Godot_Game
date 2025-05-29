@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://m2ssdd1ow2uk"]
+
+[ext_resource type="Texture2D" uid="uid://dqj56xn7sc38j" path="res://Assets/Items/Mesa.png" id="1_m7pvi"]
+
+[node name="Mesa" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_m7pvi")

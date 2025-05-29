@@ -28,3 +28,5 @@ sprite_frames = SubResource("SpriteFrames_eovys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vb825")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
