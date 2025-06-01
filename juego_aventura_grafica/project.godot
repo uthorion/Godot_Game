@@ -21,6 +21,7 @@ GAMESTATE="*res://Scrips/Autoloads/GameState.gd"
 CURSORMANAGER="*res://Scrips/Autoloads/CursorManager.gd"
 PAUSEMENU="*res://UI/pause_menu.tscn"
 GESTORDIALOGOS="*res://UI/TextController/text_controller.tscn"
+INVENTORY="*res://Scrips/Autoloads/Inventory.gd"
 
 [display]
 
@@ -28,6 +29,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gamedev_assistant/plugin.cfg")
 
 [input]
 

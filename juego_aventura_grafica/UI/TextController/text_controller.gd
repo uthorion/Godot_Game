@@ -59,7 +59,7 @@ func _unhandled_input(event):
 		else:
 			mostrar_dialogo()
 
-func _on_gui_input(event):
+func _gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if escribiendo:
 			rich_text.text = texto_completo

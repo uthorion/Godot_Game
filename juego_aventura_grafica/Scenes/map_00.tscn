@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cp1wqm0w7ygb1" path="res://Objects/Interactivos/interactive_lamp.tscn" id="5_uo0p6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uo0p6"]
-vertices = PackedVector2Array(1900, 764.961, 1900, 1015.92, 22.3281, 1002.07, 30.6484, 758.031)
+vertices = PackedVector2Array(1879.06, 842.961, 1898.78, 1015.91, 22.7734, 1002.07, 35.2734, 836.031)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(21, 748, 1910, 755, 1910, 1026, 12, 1012)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(26, 826, 1888, 833, 1910, 1026, 12, 1012)])
 
 [node name="Map_00" type="Node2D"]
 script = ExtResource("1_uo0p6")
@@ -20,7 +20,7 @@ scale = Vector2(1.70893, 1.49583)
 texture = ExtResource("2_7u7ch")
 
 [node name="Player" parent="." instance=ExtResource("4_uc0oj")]
-position = Vector2(1821, 759)
+position = Vector2(1788, 832)
 scale = Vector2(0.25, 0.25)
 
 [node name="TransitionArea" parent="." instance=ExtResource("5_ke8oh")]

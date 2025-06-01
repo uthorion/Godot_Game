@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfqr1a7xaiqm5"]
+[gd_scene load_steps=6 format=3 uid="uid://bfqr1a7xaiqm5"]
 
 [ext_resource type="Texture2D" uid="uid://qhslhudq5ian" path="res://Assets/Sprites/personaje.png" id="1_5mj4t"]
 [ext_resource type="Script" uid="uid://cbp1uol865t5n" path="res://Scrips/Personajes/player.gd" id="1_eovys"]
+[ext_resource type="Resource" uid="uid://d07jkcjmggf1w" path="res://Items/LlaveCofre.tres" id="2_vb825"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eovys"]
 animations = [{
@@ -19,14 +20,17 @@ size = Vector2(262, 604)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 50
-position = Vector2(898, 551)
+position = Vector2(659, 396)
 script = ExtResource("1_eovys")
+item_debug = ExtResource("2_vb825")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -228)
 sprite_frames = SubResource("SpriteFrames_eovys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -228)
 shape = SubResource("RectangleShape2D_vb825")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

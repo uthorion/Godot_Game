@@ -1,6 +1,9 @@
 extends CanvasLayer
 
+@onready var color_rect = $ColorRect
+
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 
 func toggle_pause():
@@ -10,3 +13,7 @@ func toggle_pause():
 	else:
 		get_tree().paused = true
 		show()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		toggle_pause()

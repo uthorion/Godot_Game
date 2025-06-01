@@ -57,4 +57,5 @@ position = Vector2(572, 765)
 scale = Vector2(0.65, 0.65)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-1, 12)
 navigation_polygon = SubResource("NavigationPolygon_546ff")

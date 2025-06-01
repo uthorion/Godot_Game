@@ -55,5 +55,3 @@ theme_override_fonts/normal_font = ExtResource("2_bq0kh")
 theme_override_font_sizes/normal_font_size = 50
 text = "podes explicarmelo de nuevo pero con mas detalle, osea yo quiero que la fila 1, se le reste -35, a la 2 -35, a la 3 -23 y asi sucesivamente segun la fila. como hago para que le aplique a cada fila la resta sin tener que ponerle manualmente ese negativo"
 scroll_active = false
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
