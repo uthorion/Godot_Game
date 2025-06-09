@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var item_debug: Item
+#@export var item_debug: Item
 @onready var agent = $NavigationAgent2D
 @onready var sprite = $AnimatedSprite2D
 
@@ -8,9 +8,9 @@ const SPEED = 250
 var facing_right = true
 var ignorar_input_un_frame := false
 
-func _ready():
-	if(INVENTORY.inventario_objetos.size()==0):
-		INVENTORY.addObjeto(item_debug)
+#func _ready():
+	#if(INVENTORY.inventario_objetos.size()==0):
+		#INVENTORY.addObjeto(item_debug)
 
 func _input(event):
 	if ignorar_input_un_frame:

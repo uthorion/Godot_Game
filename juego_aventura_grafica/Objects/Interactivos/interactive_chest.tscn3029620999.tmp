@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2whd83ixrffe"]
+[gd_scene load_steps=4 format=3 uid="uid://b2whd83ixrffe"]
 
 [ext_resource type="Texture2D" uid="uid://bd02lmwhjw1nl" path="res://Assets/Items/chest.png" id="1_dkeof"]
 [ext_resource type="Script" uid="uid://dxf5pxc14mis5" path="res://Scrips/Interactivos/interactive_chest.gd" id="1_uujq2"]
-[ext_resource type="Texture2D" uid="uid://ddihmepsuse00" path="res://Assets/Items/chest_open.png" id="2_irt2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2ccw"]
 size = Vector2(222, 164)
@@ -11,7 +10,6 @@ size = Vector2(222, 164)
 z_index = 10
 position = Vector2(1, 1)
 script = ExtResource("1_uujq2")
-textura_abierta = ExtResource("2_irt2a")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	var from_scene = GAMESTATE.previous_scene.get_file().get_basename()
+	GAMESTATE.save_game()
 	var marker_name = "entry_from_%s" % from_scene
 
 	if has_node(marker_name):
