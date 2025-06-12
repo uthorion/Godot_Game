@@ -6,7 +6,7 @@ func _ready():
 		PAUSEMENU.hide()
 		PAUSEMENU.process_mode = Node.PROCESS_MODE_DISABLED
 
-	#GAMESTATE.load_game()
+	GAMESTATE.load_game()
 	
 func _on_jugar_pressed():
 	if PAUSEMENU:

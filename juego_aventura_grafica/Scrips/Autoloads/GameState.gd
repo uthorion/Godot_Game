@@ -42,12 +42,18 @@ func load_game():
 	file.close()
 
 	var parsed = JSON.parse_string(data)
-
 	if parsed == null:
 		print("Error al leer archivo de guardado.")
 		return
 
-	collected_items = parsed.get("collected_items", [])
-	opened_chests = parsed.get("opened_chests", [])
+	var raw_items = parsed.get("collected_items", [])
+	collected_items = []
+	for item in raw_items:
+		collected_items.append(str(item))
+
+	var raw_chests = parsed.get("opened_chests", [])
+	opened_chests = []
+	for chest in raw_chests:
+		opened_chests.append(str(chest))
 
 	print("Juego cargado.")
