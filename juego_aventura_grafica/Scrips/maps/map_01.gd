@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	var from_scene = GAMESTATE.previous_scene.get_file().get_basename()
 	GAMESTATE.save_game()
+	await SCREENFADER.fade_in(0.5)
 	var marker_name = "entry_from_%s" % from_scene
 	
 	

@@ -13,10 +13,5 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_htamw")
 debug_color = Color(0.826887, 0.363399, 0.425655, 0.42)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-size_flags_horizontal = 4
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
