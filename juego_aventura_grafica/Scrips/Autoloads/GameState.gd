@@ -4,23 +4,35 @@ const SAVE_PATH := "res://Persistence/save_data.json"
 var previous_scene: String = ""
 
 #guarda los IDs de los items recolectados por player
-var collected_items: Array[String] = []
+var collected_items: Array[Dictionary] = []
 #guarda IDs de items tipo cofre que fueron abiertos
-var opened_chests: Array[String] = []
+var opened_chests: Array[Dictionary] = []
 
-func has_item(item_id: String) -> bool:
-	return item_id in collected_items
+func has_item(item_id: int) -> bool:
+	for item in collected_items:
+		if item.get("id") == item_id:
+			return true
+	return false
 
-func has_opened(chest_id: String) -> bool:
-	return chest_id in opened_chests
+func has_opened(chest_id: int) -> bool:
+	for chest in opened_chests:
+		if chest.get("id") == chest_id:
+			return true
+	return false
 
-func mark_item_collected(item_id: String):
+func mark_item_collected(item_id: int, tipo: String = "llave"):
 	if not has_item(item_id):
-		collected_items.append(item_id)
+		collected_items.append({
+			"id": item_id,
+			"tipo": tipo
+		})
 #marca un cofre como abierto solo si no esta en la lista opened_chests
-func mark_chest_opened(chest_id: String):
+func mark_chest_opened(chest_id: int, tipo: String = "cofre"):
 	if not has_opened(chest_id):
-		opened_chests.append(chest_id)
+		opened_chests.append({
+			"id": chest_id,
+			"tipo": tipo
+		})
 		
 func save_game():
 	var save_data = {
@@ -49,11 +61,13 @@ func load_game():
 	var raw_items = parsed.get("collected_items", [])
 	collected_items = []
 	for item in raw_items:
-		collected_items.append(str(item))
+		if typeof(item) == TYPE_DICTIONARY:
+			collected_items.append(item)
 
 	var raw_chests = parsed.get("opened_chests", [])
 	opened_chests = []
 	for chest in raw_chests:
-		opened_chests.append(str(chest))
+		if typeof(chest) == TYPE_DICTIONARY:
+			opened_chests.append(chest)
 
 	print("Juego cargado.")

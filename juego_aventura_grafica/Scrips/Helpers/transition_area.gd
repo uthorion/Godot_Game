@@ -4,7 +4,7 @@ extends Area2D
 var can_trigger: bool = false
 
 func _ready():
-	await get_tree().create_timer(2).timeout  # espera 0.2 segundos
+	await get_tree().create_timer(0.2).timeout  # espera 0.2 segundos
 	can_trigger = true
 
 func _on_body_entered(body):

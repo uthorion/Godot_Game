@@ -8,7 +8,7 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	CURSORMANAGER.set_cursor_default()
 
-var dialogos_lampara = [
+var dialogs_lamp = [
 	"Hola, soy una lámpara.",
 	"Tengo una bombilla nueva y todo.", 
 	"Bienvenido a Pepe's company."
@@ -20,4 +20,4 @@ func _ready():
 func _on_area_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		print("🟨 Clic detectado")
-		GESTORDIALOGOS.mostrar_dialogo_externo(dialogos_lampara)
+		GESTORDIALOGOS.show_external_dialog(dialogs_lamp)

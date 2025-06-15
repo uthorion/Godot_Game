@@ -1,9 +1,10 @@
 extends Area2D
 
-@export var item_id: String = "llave_01"
+@export var item_id: int = 1
+@export var tipo: String = "llave"
 @export var pickup_distance: float = 200.0
 
-var dialogos_llave_01 = [
+var dialogs_key_01 = [
 	"Llave recolectada."
 ]
 
@@ -34,7 +35,7 @@ func _input_event(viewport, event, shape_idx):
 				INVENTORY.add_item(item_id)
 				print("Recolectado:", item_id)
 			queue_free()
-			GESTORDIALOGOS.mostrar_dialogo_externo(dialogos_llave_01)
+			GESTORDIALOGOS.show_external_dialog(dialogs_key_01)
 			
 		else:
 			print("Jugador está demasiado lejos para recoger la llave")

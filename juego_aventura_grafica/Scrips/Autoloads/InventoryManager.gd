@@ -1,13 +1,13 @@
 extends Node
 
-var inventario_objetos: Array[String] = []
+var inventory_objects: Array[int] = []
 
-func add_item(item_id: String) -> void:
+func add_item(item_id: int) -> void:
 	if not has_item(item_id):
-		inventario_objetos.append(item_id)
+		inventory_objects.append(item_id)
 
-func has_item(item_id: String) -> bool:
-	return item_id in inventario_objetos
+func has_item(item_id: int) -> bool:
+	return item_id in inventory_objects
 
-func remove_item(item_id: String) -> void:
-	inventario_objetos.erase(item_id)
+func remove_item(item_id: int) -> void:
+	inventory_objects.erase(item_id)

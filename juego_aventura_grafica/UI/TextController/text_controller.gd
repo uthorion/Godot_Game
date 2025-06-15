@@ -46,22 +46,22 @@ func show_dialog():
 		# Es diálogo con opciones
 		options_container.visible = true
 		rich_text.clear()
-		complete_text = actual_dialog.get("texto", "")
+		complete_text = actual_dialog.get("text", "")
 		writing = false
 		rich_text.text = complete_text
-		show_options(actual_dialog.get("opciones", []))
+		show_options(actual_dialog.get("options", []))
 
-func writing_text(texto):
+func writing_text(text):
 	rich_text.clear()
 	writing = true
-	await show_text_letter_by_letter(texto)
+	await show_text_letter_by_letter(text)
 	writing = false
 
-func show_text_letter_by_letter(texto: String) -> void:
-	for i in texto.length():
+func show_text_letter_by_letter(text: String) -> void:
+	for i in text.length():
 		if not writing:
 			return
-		rich_text.append_text(texto[i])
+		rich_text.append_text(text[i])
 		await get_tree().create_timer(0.03).timeout
 
 func _unhandled_input(event):
@@ -89,21 +89,21 @@ func show_options(opciones: Array) -> void:
 	for i in range(opciones.size()):
 		var option = opciones[i]
 		var btn = Button.new()
-		btn.text = option.get("texto", "Opción "+str(i))
+		btn.text = option.get("text", "option "+str(i))
 		btn.add_theme_color_override("font_color", Color.WHITE)
 		btn.add_theme_color_override("bg_color", Color.DARK_GRAY)
-		btn.connect("pressed", Callable(self, "_on_opcion_seleccionada").bind(i))
+		btn.connect("pressed", Callable(self, "_on_selected_option").bind(i))
 		options_container.add_child(btn)
 
 func _on_selected_option(option_index):
 	var actual_dialog = dialog[current_dialog_index]
-	var options = actual_dialog.get("opciones", [])
+	var options = actual_dialog.get("options", [])
 	if option_index < options.size():
-		var siguiente = options[option_index].get("siguiente", -1)
-		if siguiente == -1:
+		var next = options[option_index].get("next", -1)
+		if next == -1:
 			end_dialog()
 		else:
-			current_dialog_index = siguiente
+			current_dialog_index = next
 			options_container.visible = false
 			show_dialog()
 
@@ -114,4 +114,4 @@ func end_dialog():
 	visible = false
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.ignorar_input_un_frame = true
+		player.ignore_input_un_frame = true

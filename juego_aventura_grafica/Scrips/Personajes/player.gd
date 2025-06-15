@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var agent = $NavigationAgent2D
 @onready var sprite = $AnimatedSprite2D
 
-const SPEED = 250
+const SPEED = 350
 var facing_right = true
 var ignore_input_un_frame := false
 
@@ -17,7 +17,7 @@ func _input(event):
 		agent.set_target_position(target)
 
 func _physics_process(_delta):
-	if GESTORDIALOGOS.dialogo_activo:
+	if GESTORDIALOGOS.active_dialog:
 		velocity = Vector2.ZERO
 		return
 

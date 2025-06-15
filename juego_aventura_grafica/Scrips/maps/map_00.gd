@@ -3,8 +3,8 @@ extends Node2D
 func _ready():
 	var from_scene = GAMESTATE.previous_scene.get_file().get_basename()
 	GAMESTATE.save_game()
-	await SCREENFADER.fade_in(0.5)
 	var marker_name = "entry_from_%s" % from_scene
+	
 
 	if has_node(marker_name):
 		var marker = get_node(marker_name)
@@ -23,3 +23,5 @@ func _ready():
 			player.get_node("AnimatedSprite2D").flip_h = true
 	else:
 		print("No se encontró punto de entrada desde:", from_scene)
+	
+	await SCREENFADER.fade_in(0.5)
