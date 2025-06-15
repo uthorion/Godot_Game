@@ -19,10 +19,10 @@ config/icon="res://icon.svg"
 
 GAMESTATE="*res://Scrips/Autoloads/GameState.gd"
 CURSORMANAGER="*res://Scrips/Autoloads/CursorManager.gd"
-PAUSEMENU="*res://UI/pause_menu.tscn"
+PAUSEMENU="*res://UI/Helpers/pause_menu.tscn"
 GESTORDIALOGOS="*res://UI/TextController/text_controller.tscn"
 INVENTORY="*res://Scrips/Autoloads/InventoryManager.gd"
-SCREENFADER="*res://UI/screen_fader.tscn"
+SCREENFADER="*res://UI/Helpers/screen_fader.tscn"
 
 [display]
 

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var area = $Area2D
 
-var dialogos_npc_01 = [
+var dialogs_npc_01 = [
 	"Finalmente has llegado.",
 	{
 		"texto": "¿Qué quieres hacer?",
@@ -46,7 +46,7 @@ func _ready():
 
 func _on_area_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		GESTORDIALOGOS.mostrar_dialogo_externo(dialogos_npc_01)
+		GESTORDIALOGOS.mostrar_dialogo_externo(dialogs_npc_01)
 
 func _on_area_2d_mouse_entered():
 	CURSORMANAGER.set_cursor_boca()

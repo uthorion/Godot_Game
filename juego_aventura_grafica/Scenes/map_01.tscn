@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://cayjo3ryb8ojd" path="res://Scrips/maps/map_01.gd" id="1_5230n"]
 [ext_resource type="Texture2D" uid="uid://c0rx0gbddncvu" path="res://Assets/Backgrounds/Map_01.png" id="1_ph8ol"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_pxd2v"]
-[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/transition_area.tscn" id="3_iq20c"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="3_iq20c"]
 [ext_resource type="PackedScene" uid="uid://b2whd83ixrffe" path="res://Objects/Interactivos/interactive_chest.tscn" id="5_546ff"]
 [ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="6_tp66r"]
-[ext_resource type="PackedScene" uid="uid://m2ssdd1ow2uk" path="res://Objects/Decorativos/mesa.tscn" id="7_id6oe"]
-[ext_resource type="PackedScene" uid="uid://kx7rngnanlgx" path="res://Objects/Interactivos/llave_interactiva.tscn" id="8_p5bod"]
+[ext_resource type="PackedScene" uid="uid://m2ssdd1ow2uk" path="res://Objects/Decorativos/Desk.tscn" id="7_id6oe"]
+[ext_resource type="PackedScene" uid="uid://kx7rngnanlgx" path="res://Objects/Interactivos/Interactive_key.tscn" id="8_p5bod"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_546ff"]
 vertices = PackedVector2Array(1858.92, 972, 57.9063, 973.977, 56.0938, 772.953, 1878.98, 764.047)
@@ -48,12 +48,12 @@ scale = Vector2(0.65, 0.65)
 position = Vector2(1256, 740)
 scale = Vector2(0.35, 0.35)
 
-[node name="Mesa" parent="." instance=ExtResource("7_id6oe")]
-position = Vector2(497, 806)
-scale = Vector2(0.65, 0.65)
+[node name="Desk" parent="." instance=ExtResource("7_id6oe")]
+position = Vector2(487, 791)
+scale = Vector2(0.75, 0.75)
 
-[node name="Llave_interactiva" parent="." instance=ExtResource("8_p5bod")]
-position = Vector2(572, 765)
+[node name="Interactive_Key" parent="." instance=ExtResource("8_p5bod")]
+position = Vector2(570, 754)
 scale = Vector2(0.65, 0.65)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

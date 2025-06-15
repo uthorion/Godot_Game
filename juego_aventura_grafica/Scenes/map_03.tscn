@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c51fh33ei6n3j" path="res://Scrips/maps/map_03.gd" id="1_6d1mh"]
 [ext_resource type="Texture2D" uid="uid://cmixv8rslyabt" path="res://Assets/Backgrounds/mapa sin terminar2.png" id="1_lm2sg"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_6i62k"]
-[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/transition_area.tscn" id="3_82as4"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="3_82as4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_82as4"]
 vertices = PackedVector2Array(1836.88, 979.008, 64.7734, 980.977, 61.2266, 828.961, 1835.11, 822.031)

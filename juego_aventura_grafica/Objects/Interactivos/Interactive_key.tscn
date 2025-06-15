@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kx7rngnanlgx"]
 
-[ext_resource type="Script" uid="uid://chsj6hen2n6x3" path="res://Scrips/Interactivos/llave_interactiva.gd" id="1_pq2yd"]
+[ext_resource type="Script" uid="uid://chsj6hen2n6x3" path="res://Scrips/Interactivos/interactive_key.gd" id="1_pq2yd"]
 [ext_resource type="Texture2D" uid="uid://bkbyxg8u54wut" path="res://Assets/Items/Llave.png" id="1_ud2yh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrqeo"]
