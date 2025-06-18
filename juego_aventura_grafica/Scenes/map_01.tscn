@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnpe777riasbf"]
+[gd_scene load_steps=11 format=3 uid="uid://dnpe777riasbf"]
 
 [ext_resource type="Script" uid="uid://cayjo3ryb8ojd" path="res://Scrips/maps/map_01.gd" id="1_5230n"]
 [ext_resource type="Texture2D" uid="uid://c0rx0gbddncvu" path="res://Assets/Backgrounds/Map_01.png" id="1_ph8ol"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="6_tp66r"]
 [ext_resource type="PackedScene" uid="uid://m2ssdd1ow2uk" path="res://Objects/Decorativos/Desk.tscn" id="7_id6oe"]
 [ext_resource type="PackedScene" uid="uid://kx7rngnanlgx" path="res://Objects/Interactivos/Interactive_key.tscn" id="8_p5bod"]
+[ext_resource type="PackedScene" uid="uid://bhijf72jb2qi" path="res://UI/Helpers/checkpoint.tscn" id="9_id6oe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_546ff"]
 vertices = PackedVector2Array(1858.92, 972, 57.9063, 973.977, 56.0938, 772.953, 1878.98, 764.047)
@@ -59,3 +60,6 @@ scale = Vector2(0.65, 0.65)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-1, 12)
 navigation_polygon = SubResource("NavigationPolygon_546ff")
+
+[node name="Checkpoint" parent="." instance=ExtResource("9_id6oe")]
+position = Vector2(985, 731)

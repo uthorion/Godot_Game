@@ -1,5 +1,5 @@
 extends Node
-const SAVE_PATH := "res://Persistence/save_data.json"
+const SAVE_PATH := "user://save_data.json"
 
 var previous_scene: String = ""
 
@@ -42,6 +42,8 @@ func save_game():
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data))
 	file.close()
+	print("item", collected_items)
+	print("item", opened_chests)
 	print("Juego guardado.")
 
 func load_game():

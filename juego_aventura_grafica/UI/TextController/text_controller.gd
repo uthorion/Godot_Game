@@ -9,6 +9,7 @@ var current_dialog_index = 0
 var writing = false
 var complete_text = ""
 var active_dialog := false
+var dialog_completed_callback: Callable = Callable()
 
 func _ready():
 	visible = false
@@ -80,14 +81,14 @@ func _gui_input(event):
 		elif not options_container.visible:
 			show_dialog()
 
-func show_options(opciones: Array) -> void:
+func show_options(options: Array) -> void:
 	# Limpiar botones anteriores
 	for child in options_container.get_children():
 		options_container.remove_child(child)
 		child.queue_free()
 
-	for i in range(opciones.size()):
-		var option = opciones[i]
+	for i in range(options.size()):
+		var option = options[i]
 		var btn = Button.new()
 		btn.text = option.get("text", "option "+str(i))
 		btn.add_theme_color_override("font_color", Color.WHITE)
@@ -102,6 +103,9 @@ func _on_selected_option(option_index):
 		var next = options[option_index].get("next", -1)
 		if next == -1:
 			end_dialog()
+			if dialog_completed_callback.is_valid():
+				dialog_completed_callback.call(option_index)
+				dialog_completed_callback = Callable()
 		else:
 			current_dialog_index = next
 			options_container.visible = false
