@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnpe777riasbf"]
+[gd_scene load_steps=8 format=3 uid="uid://dnpe777riasbf"]
 
 [ext_resource type="Script" uid="uid://cayjo3ryb8ojd" path="res://Scrips/maps/map_01.gd" id="1_5230n"]
 [ext_resource type="Texture2D" uid="uid://c0rx0gbddncvu" path="res://Assets/Backgrounds/Map_01.png" id="1_ph8ol"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_pxd2v"]
 [ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="3_iq20c"]
-[ext_resource type="PackedScene" uid="uid://b2whd83ixrffe" path="res://Objects/Interactivos/interactive_chest.tscn" id="5_546ff"]
 [ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="6_tp66r"]
-[ext_resource type="PackedScene" uid="uid://m2ssdd1ow2uk" path="res://Objects/Decorativos/Desk.tscn" id="7_id6oe"]
-[ext_resource type="PackedScene" uid="uid://kx7rngnanlgx" path="res://Objects/Interactivos/Interactive_key.tscn" id="8_p5bod"]
 [ext_resource type="PackedScene" uid="uid://bhijf72jb2qi" path="res://UI/Helpers/checkpoint.tscn" id="9_id6oe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_546ff"]
@@ -41,21 +38,9 @@ position = Vector2(107, 812)
 [node name="entry_from_map_02" type="Marker2D" parent="."]
 position = Vector2(1822, 818)
 
-[node name="Interactive_chest" parent="." instance=ExtResource("5_546ff")]
-position = Vector2(710, 746)
-scale = Vector2(0.65, 0.65)
-
 [node name="NPC_01" parent="." instance=ExtResource("6_tp66r")]
 position = Vector2(1256, 740)
 scale = Vector2(0.35, 0.35)
-
-[node name="Desk" parent="." instance=ExtResource("7_id6oe")]
-position = Vector2(487, 791)
-scale = Vector2(0.75, 0.75)
-
-[node name="Interactive_Key" parent="." instance=ExtResource("8_p5bod")]
-position = Vector2(570, 754)
-scale = Vector2(0.65, 0.65)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-1, 12)

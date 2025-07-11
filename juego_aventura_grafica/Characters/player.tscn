@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfqr1a7xaiqm5"]
+[gd_scene load_steps=6 format=3 uid="uid://bfqr1a7xaiqm5"]
 
 [ext_resource type="Texture2D" uid="uid://qhslhudq5ian" path="res://Assets/Sprites/personaje.png" id="1_5mj4t"]
 [ext_resource type="Script" uid="uid://cbp1uol865t5n" path="res://Scrips/Personajes/player.gd" id="1_eovys"]
+[ext_resource type="PackedScene" uid="uid://d1e1d8fgy2347" path="res://scenes/inventory/HUD.tscn" id="3_vb825"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eovys"]
 animations = [{
@@ -32,3 +33,7 @@ position = Vector2(5, -228)
 shape = SubResource("RectangleShape2D_vb825")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_vb825")]

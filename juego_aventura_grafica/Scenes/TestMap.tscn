@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct7dyrtdc3n37"]
+
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_jpasy"]
+[ext_resource type="PackedScene" uid="uid://ycpbrsqk5pmf" path="res://scenes/colectable.tscn" id="3_c2xor"]
+[ext_resource type="Resource" uid="uid://cnavxyqbp74to" path="res://Resources/Items/KeyChest.tres" id="4_c2xor"]
+
+[node name="TestMAP" type="Node2D"]
+
+[node name="Colectable" parent="." instance=ExtResource("3_c2xor")]
+position = Vector2(838, 526)
+ItemResource = ExtResource("4_c2xor")
+
+[node name="Player" parent="." instance=ExtResource("2_jpasy")]
+position = Vector2(486, 817)
+scale = Vector2(0.35, 0.35)
