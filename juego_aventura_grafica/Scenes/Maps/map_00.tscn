@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bar1u2h8p4h4p"]
+
+[ext_resource type="Script" uid="uid://bh68lar16n0l7" path="res://Scrips/maps/map_00.gd" id="1_uo0p6"]
+[ext_resource type="Texture2D" uid="uid://osjbagj6kgoi" path="res://Assets/Backgrounds/fondo.png" id="2_7u7ch"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="4_uc0oj"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="5_ke8oh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_uo0p6"]
+vertices = PackedVector2Array(1879.06, 842.961, 1898.78, 1015.91, 22.7734, 1002.07, 35.2734, 836.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(26, 826, 1888, 833, 1910, 1026, 12, 1012)])
+
+[node name="Map_00" type="Node2D"]
+script = ExtResource("1_uo0p6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 539.5)
+scale = Vector2(1.70893, 1.49583)
+texture = ExtResource("2_7u7ch")
+
+[node name="Player" parent="." instance=ExtResource("4_uc0oj")]
+position = Vector2(1788, 832)
+scale = Vector2(0.25, 0.25)
+
+[node name="TransitionArea" parent="." instance=ExtResource("5_ke8oh")]
+position = Vector2(1892, 761)
+target_scene = "res://Scenes/Maps/map_01.tscn"
+
+[node name="entry_from_map_01" type="Marker2D" parent="."]
+position = Vector2(1799, 764)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_uo0p6")

@@ -1,6 +1,4 @@
-extends StaticBody2D
-
-@onready var area = $Area2D
+extends Area2D
 
 var dialogs_npc_01 = [
 	"Finalmente has llegado.",
@@ -42,14 +40,17 @@ var dialogs_npc_01 = [
 ]
 
 func _ready():
-	area.input_event.connect(_on_area_input)
+	input_event.connect(_on_area_input)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 
 func _on_area_input(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		GESTORDIALOGOS.show_external_dialog(dialogs_npc_01)
 
-func _on_area_2d_mouse_entered():
+func _on_mouse_entered():
 	CURSORMANAGER.set_cursor_boca()
 
-func _on_area_2d_mouse_exited():
+
+func _on_mouse_exited():
 	CURSORMANAGER.set_cursor_default()

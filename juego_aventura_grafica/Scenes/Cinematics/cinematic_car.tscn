@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b30m8p5y3ppf4"]
+
+[ext_resource type="Texture2D" uid="uid://bfcsx4x85wocx" path="res://Assets/Cinematics/Manejando en la oscuridad.png" id="1_is6ib"]
+[ext_resource type="Script" uid="uid://c8o586xlw4b3r" path="res://Scrips/maps/Cinematics/cinematic_car.gd" id="1_sdbkh"]
+
+[node name="Cinematic_Car" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sdbkh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 756.0
+texture = ExtResource("1_is6ib")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

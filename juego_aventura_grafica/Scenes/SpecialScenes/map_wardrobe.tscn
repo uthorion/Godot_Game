@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkcqnchej20ff"]
+
+[ext_resource type="Script" uid="uid://dwk83jxx3xcgh" path="res://Scrips/maps/SpecialScenes/map_wardrobe.gd" id="1_o0iwa"]
+[ext_resource type="Texture2D" uid="uid://dgeub1g1j11w5" path="res://Assets/Items/WardrobeOpen.png" id="2_6p1b4"]
+[ext_resource type="Texture2D" uid="uid://co3aymbds8wm7" path="res://Assets/Items/WardrobeClosed.png" id="3_2h1wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p1b4"]
+size = Vector2(563, 602)
+
+[node name="Map_Wardrobe" type="Area2D"]
+z_index = 50
+script = ExtResource("1_o0iwa")
+sprite_open = ExtResource("2_6p1b4")
+sprite_closed = ExtResource("3_2h1wh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(952, 550)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("3_2h1wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(951.5, 521)
+shape = SubResource("RectangleShape2D_6p1b4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -13.0
+offset_top = 5.0
+offset_right = 1909.0
+offset_bottom = 1097.0
+mouse_filter = 2
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

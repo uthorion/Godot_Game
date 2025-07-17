@@ -1,9 +1,17 @@
 extends Node2D
 
 func _ready():
+	var coming_from_cinematic := false
+	
+	if not GAMESTATE.coming_from_cinematic:
+		SCREENFADER.fade_out(0.0)
+		await SCREENFADER.fade_in(0.5)
+	else:
+		await SCREENFADER.fade_in(3.0)
+		GAMESTATE.coming_from_cinematic = false  # Resetearlo para próximas escenas
+		
 	var from_scene = GAMESTATE.previous_scene.get_file().get_basename()
 	var marker_name = "entry_from_%s" % from_scene
-	
 
 	if has_node(marker_name):
 		var marker = get_node(marker_name)
@@ -23,4 +31,3 @@ func _ready():
 	else:
 		print("No se encontró punto de entrada desde:", from_scene)
 	
-	await SCREENFADER.fade_in(0.5)

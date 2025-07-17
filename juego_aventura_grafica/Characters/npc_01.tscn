@@ -14,10 +14,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm553"]
-size = Vector2(262, 604)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ioe5"]
+size = Vector2(258, 607)
 
-[node name="NPC_01" type="StaticBody2D"]
+[node name="NPC_01" type="Area2D"]
 position = Vector2(967, 535)
 script = ExtResource("1_4ioe5")
 metadata/_edit_group_ = true
@@ -26,11 +26,6 @@ metadata/_edit_group_ = true
 position = Vector2(-8, 4)
 sprite_frames = SubResource("SpriteFrames_4ioe5")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4, 2)
-shape = SubResource("RectangleShape2D_qm553")
-
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 2.5)
+shape = SubResource("RectangleShape2D_4ioe5")

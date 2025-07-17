@@ -11,7 +11,7 @@ func _ready():
 func _on_jugar_pressed():
 	if PAUSEMENU:
 		PAUSEMENU.process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().change_scene_to_file("res://Scenes/map_00.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Maps/map_00.tscn")
 
 func _on_salir_pressed():
 	get_tree().quit()

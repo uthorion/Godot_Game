@@ -117,5 +117,3 @@ func end_dialog():
 	options_container.visible = false
 	visible = false
 	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		player.ignore_input_un_frame = true

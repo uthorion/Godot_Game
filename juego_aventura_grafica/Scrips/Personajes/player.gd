@@ -3,14 +3,10 @@ extends CharacterBody2D
 @onready var agent = $NavigationAgent2D
 @onready var sprite = $AnimatedSprite2D
 
-const SPEED = 350
+const SPEED = 750
 var facing_right = true
-var ignore_input_un_frame := false
 
 func _input(event):
-	if ignore_input_un_frame:
-		ignore_input_un_frame = false
-		return
 
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var target = get_global_mouse_position()
