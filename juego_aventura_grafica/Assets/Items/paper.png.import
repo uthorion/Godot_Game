@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkdmkwysndt3l"
-path="res://.godot/imported/Backpack_open.png-50e00ed9e957c5bf99c4ac04195ec0e6.ctex"
+uid="uid://flq8ktukpnbq"
+path="res://.godot/imported/paper.png-7bc82ddc10dc7696ae6752d721d84277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Backpack_open.png"
-dest_files=["res://.godot/imported/Backpack_open.png-50e00ed9e957c5bf99c4ac04195ec0e6.ctex"]
+source_file="res://Assets/Items/paper.png"
+dest_files=["res://.godot/imported/paper.png-7bc82ddc10dc7696ae6752d721d84277.ctex"]
 
 [params]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4knn0rl5abd6"]
+
+[ext_resource type="Texture2D" uid="uid://flq8ktukpnbq" path="res://Assets/Items/paper.png" id="1_64ofs"]
+[ext_resource type="Script" uid="uid://5oysomjqwnen" path="res://Scrips/Interactivos/interactive_note.gd" id="1_we12u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we12u"]
+radius = 130.384
+
+[node name="Note" type="Area2D"]
+script = ExtResource("1_we12u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_64ofs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_we12u")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

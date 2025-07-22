@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6lhsjbki4reg"
-path="res://.godot/imported/Backpack_closed.png-21c703abc0a9afcb73f2e62e84032a84.ctex"
+uid="uid://cumuaxdovaqjc"
+path="res://.godot/imported/Guia del juego.png-92aaf05873c3bf8b7056c1f443e11adb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Items/Backpack_closed.png"
-dest_files=["res://.godot/imported/Backpack_closed.png-21c703abc0a9afcb73f2e62e84032a84.ctex"]
+source_file="res://Assets/Guia del juego.png"
+dest_files=["res://.godot/imported/Guia del juego.png-92aaf05873c3bf8b7056c1f443e11adb.ctex"]
 
 [params]
 

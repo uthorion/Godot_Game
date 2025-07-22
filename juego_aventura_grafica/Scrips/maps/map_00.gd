@@ -1,5 +1,11 @@
 extends Node2D
 
+var Start_text = [
+	"Despiertas de golpe me medio de una plaza, sientes que algo no va bien",
+	"Te tocas el cuerpo y pientas para tu adentro \"¿no estaba en el auto?\"",
+	"Te estremeces pero decides que lo mas sensato es buscar algun lugar que te resulte conocido, por lo que empiezas a caminar."
+]
+
 func _ready():
 	var coming_from_cinematic := false
 	
@@ -30,4 +36,6 @@ func _ready():
 			player.get_node("AnimatedSprite2D").flip_h = true
 	else:
 		print("No se encontró punto de entrada desde:", from_scene)
+	
+	GESTORDIALOGOS.show_external_dialog(Start_text)
 	

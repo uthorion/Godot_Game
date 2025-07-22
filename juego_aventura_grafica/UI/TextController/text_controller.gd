@@ -2,8 +2,10 @@ extends Control
 
 @onready var dialog_box = $Dialogo
 @onready var rich_text = $Dialogo/MarginContainer/Dialogos
-@onready var options_container = $Dialogo/MarginContainer/Opciones 
+@onready var options_container = $Dialogo/MarginContainer/Opciones
+@onready var background = $Dialogo/TextureRect
 
+var external_text_target: RichTextLabel = null
 var dialog = []
 var current_dialog_index = 0
 var writing = false
@@ -52,8 +54,21 @@ func show_dialog():
 		rich_text.text = complete_text
 		show_options(actual_dialog.get("options", []))
 
+func set_external_text_target(label: RichTextLabel):
+	external_text_target = label
+	if external_text_target:
+		background.visible = false
+		dialog_box.visible = false  # Opcional: ocultar todo el box
+	else:
+		background.visible = true
+		dialog_box.visible = true
+
 func writing_text(text):
-	rich_text.clear()
+	if external_text_target:
+		external_text_target.clear()
+	else:
+		rich_text.clear()
+
 	writing = true
 	await show_text_letter_by_letter(text)
 	writing = false
@@ -62,7 +77,10 @@ func show_text_letter_by_letter(text: String) -> void:
 	for i in text.length():
 		if not writing:
 			return
-		rich_text.append_text(text[i])
+		if external_text_target:
+			external_text_target.append_text(text[i])
+		else:
+			rich_text.append_text(text[i])
 		await get_tree().create_timer(0.03).timeout
 
 func _unhandled_input(event):
@@ -110,10 +128,20 @@ func _on_selected_option(option_index):
 			current_dialog_index = next
 			options_container.visible = false
 			show_dialog()
+			
 
 func end_dialog():
 	active_dialog = false
 	dialog_box.visible = false
 	options_container.visible = false
 	visible = false
+
+	if external_text_target:
+		external_text_target.clear()
+	external_text_target = null
+
+	if dialog_completed_callback.is_valid():
+		dialog_completed_callback.call()
+		dialog_completed_callback = Callable()
+
 	var player = get_tree().get_first_node_in_group("player")

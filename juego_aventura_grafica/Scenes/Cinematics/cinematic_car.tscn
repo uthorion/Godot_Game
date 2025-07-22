@@ -14,10 +14,20 @@ script = ExtResource("1_sdbkh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1917.0
+offset_right = 1920.0
 offset_bottom = 756.0
 texture = ExtResource("1_is6ib")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CinematicLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -322.0
+offset_right = 1926.0
+grow_vertical = 0
+bbcode_enabled = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

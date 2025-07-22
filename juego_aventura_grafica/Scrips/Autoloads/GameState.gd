@@ -3,6 +3,7 @@ const SAVE_PATH := "user://save_data.json"
 
 var previous_scene: String = ""
 var coming_from_cinematic := false
+var note_was_read := false
 
 #guarda los IDs de los items recolectados por player
 var collected_items: Array[Dictionary] = []
