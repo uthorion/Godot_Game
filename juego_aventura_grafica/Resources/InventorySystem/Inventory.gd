@@ -5,16 +5,6 @@ var items: Array[ItemData] = []
 
 signal items_chaged
 
-func _ready():
-	add_item(preload("res://Resources/Items/KeyChest.tres"))
-	add_item(preload("res://Resources/Items/KeyChest.tres"))
-	add_item(preload("res://Resources/Items/KeyChest.tres"))
-	add_item(preload("res://Resources/Items/KeyChest.tres"))
-
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_accept"):
-		add_item(preload("res://Resources/Items/KeyChest.tres"))
-
 func add_item(item: ItemData):
 	if items.size() >= 6:
 		print("Inventario lleno")

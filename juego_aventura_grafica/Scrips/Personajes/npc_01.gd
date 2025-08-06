@@ -1,42 +1,69 @@
 extends Area2D
 
 var dialogs_npc_01 = [
-	"Finalmente has llegado.",
+	# 0
+	"Un hombre sentado en un banco te mira cuando te acercas",
+	# 1
 	{
-		"text": "¿Qué quieres hacer?",
 		"options": [
-			{"text": "Hablar más", "next": 2},
-			{"text": "Irme", "next": -1}
+			{ "text": "hola, ¿puede decirme donde estoy?", "next": 2 },
+			{ "text": "disculpe, ¿quién es usted?", "next": 4 },
+			{ "text": "(mejor no molestarlo)", "next": -1 }
 		]
 	},
-	"Perfecto, sigamos entonces.",
+
+	# 2 - respuesta a "¿dónde estoy?"
+	"sí, pero eso arruinaría la sorpresa, por lo que voy a tener que declinar esa petición.",
+	# 3
 	{
-		"text": "¿Sobre qué quieres hablar?",
 		"options": [
-			{"text": "Tu pasado", "next": 4},
-			{"text": "Lo que viene", "next": 6},
-			{"text": "Nada, adiós", "next": -1}
+			{ "text": "¿qué sorpresa está hablando? oiga, disculpe pero estoy perdido, creo que choqué y...", "next": 10 },
+			{ "text": "(genial, me tuvo que tocar el loco)", "next": 6 }
 		]
 	},
-	"Mi pasado está lleno de errores y decisiones difíciles...",
+
+	# 4 - respuesta a "¿quién es usted?"
+	"No tiene relevancia eso, lo que importa es que finalmente has llegado.",
+	# 5
 	{
-		"text": "¿Te arrepientes?",
 		"options": [
-			{"text": "Sí", "next": 7},
-			{"text": "No", "next": 8}
+			{ "text": "¿finalmente he llegado? este lugar ni siquiera lo conozco y usted no me suena", "next": 8 }
 		]
 	},
-	"Lo que viene depende de ti tanto como de mí.",
-	"Es difícil no hacerlo, pero he aprendido a vivir con eso.",
-	"Entonces debes seguir adelante sin mirar atrás.",
+
+	# 6 - rama de "(me tocó el loco)"
+	"no estoy loco amigo mío, y espero que sepas que tratar de loco a desconocidos no es apreciado en ningún lugar.",
+	# 7
 	{
-		"text": "¿Quieres decir algo más?",
 		"options": [
-			{"text": "Sí", "next": 10},
-			{"text": "No", "next": -1}
+			{ "text": "¿¿Cómo ha??", "next": 10 }
 		]
 	},
-	"Entonces escucha con atención: no todo está perdido."
+
+	# 8 - rama de "usted me suena"
+	"pero yo sí le conozco a usted, pero ese tampoco es el punto.",
+	# 9
+	{
+		"options": [
+			{ "text": "¿pero de qué está hablando? cada vez me confunde más", "next": 10 }
+		]
+	},
+
+	# 10 - convergencia
+	"no se preocupe por eso ahora, le recomiendo que deje de pensar en lo que le sucedió y comience a pensar en lo que está en su situación actual.",
+	# 11
+	"no puedo contarle demasiado, pero le puedo decir que debe continuar adelante, pasando la plaza hay una puerta solo para usted...",
+	# 12
+	{
+		"options": [
+			{ "text": "¿una puerta? ¿para qué yo voy a querer pasar a alguna puerta?", "next": 13 },
+			{ "text": "(me voy, no puedo seguir hablando con este pirado)", "next": 14 }
+		]
+	},
+	# 13
+	"no se preocupe, todas sus preguntas serán respondidas, pero no por mí. Lo único que le digo es que no podrá irse de la plaza a menos que sea por esa puerta",
+	# 14
+	"no tiene sentido pensar en irse, tampoco es que hay otra salida más que la puerta."
 ]
 
 func _ready():

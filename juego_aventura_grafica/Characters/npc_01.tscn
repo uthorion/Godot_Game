@@ -23,6 +23,7 @@ script = ExtResource("1_4ioe5")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-8, 4)
 sprite_frames = SubResource("SpriteFrames_4ioe5")
 

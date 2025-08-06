@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var agent = $NavigationAgent2D
 @onready var sprite = $AnimatedSprite2D
 
-const SPEED = 750
+const SPEED = 400
 var facing_right = true
 
 func _input(event):
@@ -15,10 +15,12 @@ func _input(event):
 func _physics_process(_delta):
 	if GESTORDIALOGOS.active_dialog:
 		velocity = Vector2.ZERO
+		sprite.play("idle")
 		return
 
 	if agent.is_navigation_finished():
 		velocity = Vector2.ZERO
+		sprite.play("idle")
 	else:
 		var next_position = agent.get_next_path_position()
 		var direction = (next_position - global_position).normalized()
@@ -29,7 +31,8 @@ func _physics_process(_delta):
 			facing_right = direction.x > 0
 			sprite.flip_h = not facing_right
 
+		sprite.play("walk")
+
 	move_and_slide()
-		
 		
 	

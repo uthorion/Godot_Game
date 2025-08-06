@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3byrxllgtvc1"]
+
+[ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_0e34s"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_6sckq"]
+[ext_resource type="Texture2D" uid="uid://dbbgqg4oa3vxe" path="res://Assets/Backgrounds/Recordar/Final_recordar_00.png" id="2_a76y4"]
+[ext_resource type="Script" uid="uid://cytbiuyhmlwne" path="res://Scrips/maps/attachs/map_3.gd" id="2_afaur"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="3_a76y4"]
+[ext_resource type="PackedScene" uid="uid://bhijf72jb2qi" path="res://UI/Helpers/checkpoint.tscn" id="4_afaur"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y0pti"]
+vertices = PackedVector2Array(1836.88, 979.008, 64.7734, 980.977, 61.2266, 828.961, 1835.11, 822.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(51, 819, 55, 991, 1847, 989, 1845, 812)])
+
+[node name="map_3" instance=ExtResource("1_0e34s")]
+script = ExtResource("2_afaur")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(959, 539)
+texture = ExtResource("2_a76y4")
+
+[node name="Player" parent="." index="1" instance=ExtResource("2_6sckq")]
+position = Vector2(121, 816)
+scale = Vector2(0.35, 0.35)
+
+[node name="TransitionArea" parent="." index="2" instance=ExtResource("3_a76y4")]
+position = Vector2(61, 760)
+target_scene = "res://Scenes/Maps/map_02.tscn"
+
+[node name="entry_from_map_02" type="Marker2D" parent="." index="3"]
+position = Vector2(101, 771)
+
+[node name="entry_from_map_04" type="Marker2D" parent="." index="4"]
+position = Vector2(1794, 818)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="5"]
+navigation_polygon = SubResource("NavigationPolygon_y0pti")
+
+[node name="Checkpoint" parent="." index="6" instance=ExtResource("4_afaur")]
+position = Vector2(1708, 722)

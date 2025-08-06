@@ -113,6 +113,7 @@ func show_options(options: Array) -> void:
 		btn.add_theme_color_override("bg_color", Color.DARK_GRAY)
 		btn.connect("pressed", Callable(self, "_on_selected_option").bind(i))
 		options_container.add_child(btn)
+	
 
 func _on_selected_option(option_index):
 	var actual_dialog = dialog[current_dialog_index]

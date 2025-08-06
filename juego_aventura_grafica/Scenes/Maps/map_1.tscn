@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://017q2a48c0mo"]
+
+[ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_cphd2"]
+[ext_resource type="Texture2D" uid="uid://cskkgv1oc4327" path="res://Assets/Backgrounds/Segundo escenario.png" id="2_1efcw"]
+[ext_resource type="Script" uid="uid://dly3jy1pyyf28" path="res://Scrips/maps/attachs/map_1.gd" id="2_04oj5"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="3_04oj5"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="4_bawlw"]
+[ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="5_dxmm1"]
+[ext_resource type="PackedScene" uid="uid://bygx6as0frs7w" path="res://Scenes/inventory/pickup.tscn" id="6_436e4"]
+[ext_resource type="Resource" uid="uid://cnavxyqbp74to" path="res://Resources/Items/KeyChest.tres" id="7_w8qif"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0yf"]
+vertices = PackedVector2Array(1516.08, 706.492, 1389.7, 597.258, 1576.01, 575.18, 46.3516, 719.313, 40.1172, 649.227, 772.117, 785.008, 258.609, 781.391, 1869.79, 668.961, 1738.12, 930.43, 1519.31, 910.992, 1514.83, 778.922, 259.359, 795.547, 180.633, 827.898, 106.133, 948.82, 78.8984, 893.563)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 2, 7, 8, 9, 10), PackedInt32Array(11, 6, 5), PackedInt32Array(12, 11, 5, 10, 9, 13, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(37, 727, 29, 637, 773, 775, 1505, 769, 1506, 711, 1366, 590, 1577, 565, 1884, 663, 1744, 941, 1519, 921, 100, 959, 66, 890, 176, 819, 249, 789)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56ys2"]
+radius = 40.1123
+
+[node name="Map_1" instance=ExtResource("1_cphd2")]
+script = ExtResource("2_04oj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(957.359, 542)
+scale = Vector2(0.997543, 1.00185)
+texture = ExtResource("2_1efcw")
+
+[node name="Player" parent="." index="1" instance=ExtResource("3_04oj5")]
+position = Vector2(94, 714)
+scale = Vector2(0.35, 0.35)
+
+[node name="TransitionArea2" parent="." index="2" instance=ExtResource("4_bawlw")]
+position = Vector2(1481, 581)
+target_scene = "res://Scenes/Maps/map_2.tscn"
+
+[node name="entry_from_map_00" type="Marker2D" parent="." index="3"]
+position = Vector2(107, 812)
+
+[node name="entry_from_map_02" type="Marker2D" parent="." index="4"]
+position = Vector2(1822, 818)
+
+[node name="NPC_01" parent="." index="5" instance=ExtResource("5_dxmm1")]
+position = Vector2(1112, 718)
+scale = Vector2(0.35, 0.35)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="6"]
+position = Vector2(-1, 12)
+navigation_polygon = SubResource("NavigationPolygon_fh0yf")
+
+[node name="Pickup" parent="." index="7" instance=ExtResource("6_436e4")]
+position = Vector2(838, 793)
+ItemResource = ExtResource("7_w8qif")
+isPlayerRequired = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" index="1"]
+shape = SubResource("CircleShape2D_56ys2")

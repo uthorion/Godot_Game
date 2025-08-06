@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://gas6rfb0fj4t"]
+
+[ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_rlegx"]
+[ext_resource type="Script" uid="uid://cg7870lc46kyh" path="res://Scrips/maps/attachs/map_0.gd" id="2_cgy58"]
+[ext_resource type="Texture2D" uid="uid://b4kgnr3mgmfhm" path="res://Assets/Backgrounds/Primer escenario.png" id="2_fry56"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="3_cgy58"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="4_f621b"]
+[ext_resource type="PackedScene" uid="uid://b4knn0rl5abd6" path="res://Scenes/Objects/Interactives/interactive_note.tscn" id="5_nc376"]
+[ext_resource type="Script" uid="uid://ddkrgs35kmxup" path="res://Scrips/Helpers/block_mov.gd" id="6_hrm1w"]
+[ext_resource type="Script" uid="uid://bpydp35gmkdpf" path="res://Scrips/Helpers/button.gd" id="7_uusuh"]
+[ext_resource type="Script" uid="uid://c8bt388e8c4pg" path="res://Scrips/Helpers/warning.gd" id="8_uvvfe"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hyf0x"]
+vertices = PackedVector2Array(479.992, 901.148, 369.031, 1044.08, 67.9375, 1049.66, 100.953, 995.156, 371.773, 717.25, 524.281, 718.078, 1562.07, 710.18, 1422.58, 702.773, 1395.83, 659, 1888.77, 659, 1892.18, 701.281, 36.6797, 658.883, 550.227, 652.188, 366.688, 705.063, 30.5078, 702.102, 1548.62, 867.688, 1416.89, 712.969, 1557.27, 722.609, 1636.06, 798.078, 1893.05, 793.172, 1900.91, 864.648, 1722.77, 875.422, 1831.9, 990.781, 1910.43, 995.391, 1906.58, 1060.87, 1555.63, 1056.12, 1718.36, 887.953)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(11, 12, 5, 13), PackedInt32Array(13, 14, 11), PackedInt32Array(4, 13, 5), PackedInt32Array(15, 0, 5, 16, 17, 18), PackedInt32Array(7, 6, 17, 16), PackedInt32Array(18, 19, 20, 21, 15), PackedInt32Array(22, 23, 24, 25), PackedInt32Array(26, 22, 25, 15), PackedInt32Array(21, 26, 15)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(19, 712, 360, 715, 93, 989, 50, 1060, 374, 1054, 485, 911, 1539, 878, 1546, 1066, 1916, 1071, 1921, 986, 1836, 981, 1730, 885, 1912, 874, 1902, 783, 1640, 788, 1569, 720, 1903, 711, 1898, 649, 1378, 649, 1411, 703, 539, 708, 565, 642, 28, 649)])
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wqqi2"]
+a = Vector2(469, 965)
+b = Vector2(618, 739)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnw3w"]
+size = Vector2(51, 71)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k4hjf"]
+a = Vector2(1430, 888)
+b = Vector2(1276, 679)
+
+[node name="Map_0" instance=ExtResource("1_rlegx")]
+script = ExtResource("2_cgy58")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(961.5, 536.5)
+scale = Vector2(1.00156, 0.991667)
+texture = ExtResource("2_fry56")
+
+[node name="Player" parent="." index="1" instance=ExtResource("3_cgy58")]
+position = Vector2(87, 645)
+scale = Vector2(0.25, 0.25)
+
+[node name="TransitionArea" parent="." index="2" instance=ExtResource("4_f621b")]
+position = Vector2(1894, 619)
+target_scene = "res://Scenes/Maps/map_1.tscn"
+
+[node name="entry_from_map_01" type="Marker2D" parent="." index="3"]
+position = Vector2(1834, 673)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
+navigation_polygon = SubResource("NavigationPolygon_hyf0x")
+
+[node name="Note" parent="." index="5" instance=ExtResource("5_nc376")]
+position = Vector2(602, 688)
+rotation = -2.03156
+scale = Vector2(0.15, 0.15)
+
+[node name="BlockMov" type="Area2D" parent="." index="6"]
+script = ExtResource("6_hrm1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockMov" index="0"]
+position = Vector2(13, -44)
+shape = SubResource("SegmentShape2D_wqqi2")
+
+[node name="Barrier" type="StaticBody2D" parent="." index="7"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Barrier" index="0"]
+position = Vector2(640.252, 800.831)
+scale = Vector2(1.00597, 0.974191)
+polygon = PackedVector2Array(-137.5, 107.5, -13.5, -91.5, 636.5, -93.5, 773.5, 107.5)
+
+[node name="Button" type="Area2D" parent="." index="8"]
+script = ExtResource("7_uusuh")
+barrier_path = NodePath("../Barrier")
+blockmov_path = NodePath("../BlockMov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" index="0"]
+position = Vector2(615.5, 535.5)
+shape = SubResource("RectangleShape2D_pnw3w")
+
+[node name="Warning" type="Area2D" parent="." index="9"]
+script = ExtResource("8_uvvfe")
+barrier_path = NodePath("../Barrier")
+sprite_path = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warning" index="0"]
+shape = SubResource("SegmentShape2D_k4hjf")

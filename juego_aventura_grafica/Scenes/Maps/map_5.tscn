@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxhu1rel61mrh"]
+
+[ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_mlx4y"]
+[ext_resource type="Texture2D" uid="uid://bmrecgyhbsu2w" path="res://Assets/Backgrounds/Recordar/final_recordar_02.png" id="2_8l1qn"]
+[ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="2_ah7jk"]
+[ext_resource type="Script" uid="uid://74f8uyosnfi1" path="res://Scrips/maps/attachs/map_5.gd" id="2_n50vi"]
+[ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="3_8l1qn"]
+[ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="4_n50vi"]
+[ext_resource type="PackedScene" uid="uid://cr5t6u25dlecx" path="res://Scenes/SpecialScenes/wardrobe.tscn" id="5_cprxy"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7kddu"]
+vertices = PackedVector2Array(1882.75, 1008.97, 33.4063, 1004.02, 45.6016, 706.898, 1875.23, 689.094)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(36, 697, 1888, 705, 1893, 1019, 23, 1014)])
+
+[node name="map_5" instance=ExtResource("1_mlx4y")]
+script = ExtResource("2_n50vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.00156, 1.00278)
+texture = ExtResource("2_8l1qn")
+
+[node name="entry_from_map_03" type="Marker2D" parent="." index="1"]
+
+[node name="entry_from_map_00" type="Marker2D" parent="." index="2"]
+
+[node name="TransitionArea" parent="." index="3" instance=ExtResource("2_ah7jk")]
+position = Vector2(29, 807)
+target_scene = "res://Scenes/Maps/map_03.tscn"
+
+[node name="TransitionArea2" parent="." index="4" instance=ExtResource("2_ah7jk")]
+position = Vector2(1886, 812)
+target_scene = "res://Scenes/Maps/map_00.tscn"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="5"]
+navigation_polygon = SubResource("NavigationPolygon_7kddu")
+
+[node name="NPC_01" parent="." index="6" instance=ExtResource("3_8l1qn")]
+position = Vector2(1774, 766)
+scale = Vector2(0.35, 0.35)
+
+[node name="Player" parent="." index="7" instance=ExtResource("4_n50vi")]
+position = Vector2(100, 850)
+scale = Vector2(0.35, 0.35)
+
+[node name="Wardrobe" parent="." index="8" instance=ExtResource("5_cprxy")]
+position = Vector2(976, 694)
+scale = Vector2(0.8, 0.8)

@@ -9,7 +9,7 @@ default_font = ExtResource("2_bq0kh")
 default_font_size = 50
 
 [node name="TextController" type="Control"]
-z_index = 100
+z_index = 1000
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,10 +20,10 @@ script = ExtResource("1_lsgqa")
 
 [node name="Dialogo" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 436.0
-offset_top = 735.0
-offset_right = 1953.0
-offset_bottom = 1131.0
+offset_left = 267.0
+offset_top = 733.0
+offset_right = 2257.0
+offset_bottom = 1041.0
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
@@ -38,6 +38,7 @@ offset_right = 9.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("2_xj52s")
 
 [node name="MarginContainer" type="MarginContainer" parent="Dialogo"]
@@ -47,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 40
@@ -63,5 +65,6 @@ scroll_active = false
 [node name="Opciones" type="VBoxContainer" parent="Dialogo/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 0
 theme = SubResource("Theme_bq0kh")
 theme_override_constants/separation = 8
