@@ -8,6 +8,7 @@ radius = 130.384
 
 [node name="Note" type="Area2D"]
 script = ExtResource("1_we12u")
+note_text = ["Encuentras una nota en el suelo con unos escritos que dice:\", una nota en el suelo con unos escritos que dice:", "Aquellos que desean pasar deben dejar algo atras, solo entonces la señal cambiara. Una vez que se cruza el sendero ya no existe vuelta atras.a vez que se cruza el sendero ya no existe vuelta atras.", "Sientes un escalofrio que recorre tu cuerpo..."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_64ofs")

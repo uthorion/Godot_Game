@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmxcsorhi7l5w"]
+[gd_scene load_steps=6 format=3 uid="uid://bmxcsorhi7l5w"]
 
 [ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_dr6us"]
 [ext_resource type="Script" uid="uid://c5kbg0p8q2vos" path="res://Scrips/maps/attachs/map_2.gd" id="2_i7a3l"]
 [ext_resource type="Texture2D" uid="uid://dptueb2bkjehg" path="res://Assets/Backgrounds/Tercer escenario.png" id="2_w84yv"]
+[ext_resource type="PackedScene" uid="uid://b4knn0rl5abd6" path="res://Scenes/Objects/Interactives/interactive_note.tscn" id="4_v3gvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7a3l"]
 size = Vector2(633, 874)
 
 [node name="map_2" instance=ExtResource("1_dr6us")]
 script = ExtResource("2_i7a3l")
+Start_text = ["No puedes pasar sin una llave"]
 next_scene_path = "res://Scenes/Maps/map_3.tscn"
+back_scene_path = "res://Scenes/Maps/map_1.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(959.5, 547.501)
@@ -21,6 +24,12 @@ texture = ExtResource("2_w84yv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(944.5, 534)
 shape = SubResource("RectangleShape2D_i7a3l")
+
+[node name="Note" parent="." index="2" instance=ExtResource("4_v3gvg")]
+position = Vector2(1733, 1061)
+rotation = -6.28319
+scale = Vector2(0.3, 0.3)
+note_text = ["Encuentras una nota en el suelo que dice:", "Si deseas pasar encuentra la llave entre los arboles de la plaza"]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

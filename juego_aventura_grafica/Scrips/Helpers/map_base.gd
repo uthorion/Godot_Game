@@ -9,7 +9,6 @@ func handle_fade():
 		await SCREENFADER.fade_in(0.5)
 	else:
 		await SCREENFADER.fade_in(3.0)
-		GAMESTATE.coming_from_cinematic = false
 
 func setup_player():
 	pass

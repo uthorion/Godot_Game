@@ -10,7 +10,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.name == "Player" and can_trigger:
 		can_trigger = false
-		GAMESTATE.previous_scene = get_tree().current_scene.scene_file_path
+		GAMESTATE.set_previous_scene()
 		GAMESTATE.save_game()
 		await SCREENFADER.fade_out(0.5)
 		get_tree().change_scene_to_file(target_scene)

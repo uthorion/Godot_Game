@@ -25,7 +25,7 @@ scale = Vector2(0.35, 0.35)
 
 [node name="TransitionArea" parent="." index="2" instance=ExtResource("3_a76y4")]
 position = Vector2(61, 760)
-target_scene = "res://Scenes/Maps/map_02.tscn"
+target_scene = "res://Scenes/Maps/map_2.tscn"
 
 [node name="entry_from_map_02" type="Marker2D" parent="." index="3"]
 position = Vector2(101, 771)

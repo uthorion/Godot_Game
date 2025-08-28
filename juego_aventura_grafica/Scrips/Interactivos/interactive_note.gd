@@ -1,10 +1,7 @@
 extends Area2D
 
-var note_text = [
-	"Encuentras una nota en el suelo con unos escritos que dice:",
-	"\"Aquellos que desean pasar deben dejar algo atras, solo entonces la señal cambiara. Una vez que se cruza el sendero ya no existe vuelta atras.\"",
-	"Sientes un escalofrio que recorre tu cuerpo..."
-]
+@export var note_text = []
+
 var dialog_active := false
 
 func _ready():

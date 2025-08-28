@@ -28,6 +28,7 @@ b = Vector2(1276, 679)
 
 [node name="Map_0" instance=ExtResource("1_rlegx")]
 script = ExtResource("2_cgy58")
+Start_text = ["Despiertas de golpe me medio de una plaza, sientes que algo no va bien", "Te tocas el cuerpo y piensas para tu adentro ¿no estaba en el auto?", "sientes tu cuerpo estremecerse, pero decides que lo mas sensato es buscar algun lugar que te resulte conocido, por lo que empiezas a caminar."]
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(961.5, 536.5)
@@ -35,7 +36,7 @@ scale = Vector2(1.00156, 0.991667)
 texture = ExtResource("2_fry56")
 
 [node name="Player" parent="." index="1" instance=ExtResource("3_cgy58")]
-position = Vector2(87, 645)
+position = Vector2(221, 614)
 scale = Vector2(0.25, 0.25)
 
 [node name="TransitionArea" parent="." index="2" instance=ExtResource("4_f621b")]
@@ -83,3 +84,6 @@ sprite_path = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Warning" index="0"]
 shape = SubResource("SegmentShape2D_k4hjf")
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

@@ -51,7 +51,6 @@ navigation_polygon = SubResource("NavigationPolygon_fh0yf")
 position = Vector2(345, 686)
 ItemResource = ExtResource("7_w8qif")
 isPlayerRequired = true
-startHidden = true
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" index="1"]

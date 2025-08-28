@@ -1,10 +1,20 @@
 extends "res://Scrips/Helpers/map_base.gd"
 
-var Start_text = [
-	"Despiertas de golpe me medio de una plaza, sientes que algo no va bien",
-	"Te tocas el cuerpo y pientas para tu adentro \"¿no estaba en el auto?\"",
-	"Te estremeces pero decides que lo mas sensato es buscar algun lugar que te resulte conocido, por lo que empiezas a caminar."
-]
+@export var Start_text = []
+
+func _ready():
+	super()
+	setup_player()
 
 func setup_player():
 	move_player_to_entry_point()
+	print("Valor en map_0:", GAMESTATE.coming_from_cinematic)
+	if GAMESTATE.coming_from_cinematic: 
+		GESTORDIALOGOS.show_external_dialog(Start_text)
+		GAMESTATE.coming_from_cinematic = false
+
+func _on_button_mouse_entered():
+	CURSORMANAGER.set_cursor_mano()
+
+func _on_button_mouse_exited():
+	CURSORMANAGER.set_cursor_default()

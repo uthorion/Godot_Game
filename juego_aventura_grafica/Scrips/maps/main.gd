@@ -1,17 +1,16 @@
-extends Node
+extends "res://Scrips/Helpers/map_base.gd"
 
 func _ready():
 	get_tree().paused = false
 	if PAUSEMENU:
 		PAUSEMENU.hide()
 		PAUSEMENU.process_mode = Node.PROCESS_MODE_DISABLED
-
 	GAMESTATE.load_game()
 	
 func _on_jugar_pressed():
 	if PAUSEMENU:
 		PAUSEMENU.process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().change_scene_to_file("res://Scenes/Maps/map_00.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Cinematics/cinematic_car.tscn")
 
 func _on_salir_pressed():
 	get_tree().quit()
