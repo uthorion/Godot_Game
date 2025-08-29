@@ -4,7 +4,7 @@ const REQUIRED_ITEM_ID := 1
 
 @export var Start_text = []
 
-@export var next_scene_path: String = "res://Scenes/Maps/map_3.tscn"
+@export var next_scene_path: String = "res://Scenes/SpecialScenes/scene_selector.tscn"
 @export var back_scene_path: String = "res://Scenes/Maps/map_1.tscn"
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

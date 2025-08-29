@@ -11,7 +11,7 @@ size = Vector2(633, 874)
 [node name="map_2" instance=ExtResource("1_dr6us")]
 script = ExtResource("2_i7a3l")
 Start_text = ["No puedes pasar sin una llave"]
-next_scene_path = "res://Scenes/Maps/map_3.tscn"
+next_scene_path = "res://Scenes/SpecialScenes/scene_selector.tscn"
 back_scene_path = "res://Scenes/Maps/map_1.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
