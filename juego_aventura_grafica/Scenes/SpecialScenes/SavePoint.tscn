@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdfkvll36ijgk"]
+
+[ext_resource type="Script" uid="uid://l7d6tyew785h" path="res://Scrips/Helpers/save_point.gd" id="1_mwd24"]
+[ext_resource type="Texture2D" uid="uid://dblunhvcuic4h" path="res://Assets/Items/checkpoint.png" id="2_lol7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lol7h"]
+size = Vector2(46.2, 59)
+
+[node name="SavePoint" type="Area2D"]
+script = ExtResource("1_mwd24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(11.5, 11.5)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_lol7h")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lol7h")

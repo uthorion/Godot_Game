@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blto51k0j3lyg"]
+
+[ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_wnm8q"]
+[ext_resource type="Texture2D" uid="uid://3klk1ghgm7lo" path="res://Assets/Backgrounds/Recordar/Credits.png" id="2_pw8v1"]
+
+[node name="Credits" instance=ExtResource("1_wnm8q")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(959, 539)
+texture = ExtResource("2_pw8v1")

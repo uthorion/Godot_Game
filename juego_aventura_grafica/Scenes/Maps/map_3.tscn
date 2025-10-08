@@ -1,19 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3byrxllgtvc1"]
+[gd_scene load_steps=13 format=3 uid="uid://d3byrxllgtvc1"]
 
 [ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_0e34s"]
 [ext_resource type="PackedScene" uid="uid://bfqr1a7xaiqm5" path="res://Characters/player.tscn" id="2_6sckq"]
 [ext_resource type="Texture2D" uid="uid://dbbgqg4oa3vxe" path="res://Assets/Backgrounds/Recordar/Final_recordar_00.png" id="2_a76y4"]
 [ext_resource type="Script" uid="uid://cytbiuyhmlwne" path="res://Scrips/maps/attachs/map_3.gd" id="2_afaur"]
 [ext_resource type="PackedScene" uid="uid://da4spyavvn1iy" path="res://UI/Helpers/transition_area.tscn" id="3_a76y4"]
-[ext_resource type="PackedScene" uid="uid://bhijf72jb2qi" path="res://UI/Helpers/checkpoint.tscn" id="4_afaur"]
+[ext_resource type="PackedScene" uid="uid://ci6hu2mbofh2f" path="res://Scenes/SpecialScenes/letter_tile.tscn" id="7_es4kb"]
+[ext_resource type="Script" uid="uid://e7l0klovtmlh" path="res://Scrips/Helpers/puzzle_manager.gd" id="7_y0pti"]
+[ext_resource type="Texture2D" uid="uid://uhs8xlur8rlk" path="res://Assets/Items/LettersPuzzle/LetterA.png" id="8_u07u5"]
+[ext_resource type="Texture2D" uid="uid://qqo3tuhwy3tm" path="res://Assets/Items/LettersPuzzle/LetterM.png" id="9_be5ff"]
+[ext_resource type="Texture2D" uid="uid://c5w4dukuyvh03" path="res://Assets/Items/LettersPuzzle/LetterO.png" id="10_ssxiy"]
+[ext_resource type="Texture2D" uid="uid://clcg6cmhlr407" path="res://Assets/Items/LettersPuzzle/LetterR.png" id="11_aeikj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_y0pti"]
-vertices = PackedVector2Array(1836.88, 979.008, 64.7734, 980.977, 61.2266, 828.961, 1835.11, 822.031)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(51, 819, 55, 991, 1847, 989, 1845, 812)])
+vertices = PackedVector2Array(47.1797, 706.391, 220.93, 695.859, 175.047, 836.438, 51.7969, 941.82, 1753.02, 807.344, 1746.51, 931.906, 1006.96, 925, 1417.22, 443.438, 1899.46, 579.406, 1895.49, 637.32, 1763.58, 675.297, 1023.76, 847.688, 1030.82, 570.297, 331.102, 870.031)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(7, 10, 4, 6, 11), PackedInt32Array(11, 12, 7), PackedInt32Array(13, 11, 6, 3), PackedInt32Array(13, 3, 2)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(37, 697, 42, 952, 1007, 935, 1756, 942, 1763, 808, 1773, 683, 1905, 645, 1910, 572, 1417, 433, 1021, 563, 1014, 838, 332, 860, 188, 829, 235, 685)])
 
 [node name="map_3" instance=ExtResource("1_0e34s")]
 script = ExtResource("2_afaur")
+Start_text = ["Recuerdo este lugar, era la plaza que solia visitar de pequeño con mi madre", "Me trae mucha nostalgia...", "Pero hay una sensacion que me falta... ¿que sera?"]
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(959, 539)
@@ -23,18 +29,45 @@ texture = ExtResource("2_a76y4")
 position = Vector2(121, 816)
 scale = Vector2(0.35, 0.35)
 
-[node name="TransitionArea" parent="." index="2" instance=ExtResource("3_a76y4")]
-position = Vector2(61, 760)
-target_scene = "res://Scenes/Maps/map_2.tscn"
-
-[node name="entry_from_map_02" type="Marker2D" parent="." index="3"]
+[node name="entry_from_map_02" type="Marker2D" parent="." index="2"]
 position = Vector2(101, 771)
 
-[node name="entry_from_map_04" type="Marker2D" parent="." index="4"]
+[node name="entry_from_map_04" type="Marker2D" parent="." index="3"]
 position = Vector2(1794, 818)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="5"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
 navigation_polygon = SubResource("NavigationPolygon_y0pti")
 
-[node name="Checkpoint" parent="." index="6" instance=ExtResource("4_afaur")]
-position = Vector2(1708, 722)
+[node name="PuzzleManager" type="Node" parent="." index="5"]
+script = ExtResource("7_y0pti")
+
+[node name="TransitionArea" parent="." index="6" instance=ExtResource("3_a76y4")]
+position = Vector2(1887, 559)
+target_scene = "res://Scenes/SpecialScenes/Credit.tscn"
+
+[node name="LetterTileA" parent="." index="7" groups=["letter_tiles"] instance=ExtResource("7_es4kb")]
+position = Vector2(1578, 667)
+texture = ExtResource("8_u07u5")
+
+[node name="LetterTileM" parent="." index="8" groups=["letter_tiles"] instance=ExtResource("7_es4kb")]
+position = Vector2(1198, 396)
+letter = "M"
+texture = ExtResource("9_be5ff")
+
+[node name="LetterTileO" parent="." index="9" groups=["letter_tiles"] instance=ExtResource("7_es4kb")]
+position = Vector2(1693, 731)
+letter = "O"
+texture = ExtResource("10_ssxiy")
+
+[node name="LetterTileR" parent="." index="10" groups=["letter_tiles"] instance=ExtResource("7_es4kb")]
+position = Vector2(363, 823)
+letter = "R"
+texture = ExtResource("11_aeikj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="11"]
+visible = false
+
+[node name="WordResultLabel" type="Label" parent="CanvasLayer" index="0"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0

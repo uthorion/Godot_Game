@@ -10,12 +10,7 @@ var images = [
 
 var actual_image = 0
 
-@export var dialog = [
-	#"Era una noche solitaria, las estrellas me acompañaban pero me sentia vacio",
-	#"Me puse a recordar a Lyla... apenas un año de ese fatidico dia, pero aun no podia olvidarlo",
-	#"Si tan solo ese dia no hubiera salido...",
-	#"Quizas las cosas hoy serian diferentes..."
-]
+@export var dialog = []
 
 var Actual_dialog = 0
 
@@ -27,7 +22,7 @@ func _ready():
 	SCREENFADER.fade_out(0.0)
 	await get_tree().create_timer(1.0).timeout
 	await SCREENFADER.fade_in(1.5)
-	timer.start(4.0)
+	timer.start(2.5)
 
 func show_next_dialog():
 	if Actual_dialog < dialog.size():
@@ -59,10 +54,7 @@ func transition_next_image():
 
 func end_cinematc():
 	GESTORDIALOGOS.end_dialog()
-	print("Marcando cinematic como true")
-	GAMESTATE.coming_from_cinematic = true
-	print("Valor GAMESTATE:", GAMESTATE.coming_from_cinematic)
-
+	
 	await get_tree().create_timer(1.5).timeout 
 	await SCREENFADER.fade_out(2.0)
 	get_tree().change_scene_to_file("res://Scenes/Maps/map_0.tscn")

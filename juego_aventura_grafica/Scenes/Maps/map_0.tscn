@@ -23,8 +23,8 @@ b = Vector2(618, 739)
 size = Vector2(51, 71)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_k4hjf"]
-a = Vector2(1430, 888)
-b = Vector2(1276, 679)
+a = Vector2(1392, 940)
+b = Vector2(1245, 688)
 
 [node name="Map_0" instance=ExtResource("1_rlegx")]
 script = ExtResource("2_cgy58")
@@ -43,8 +43,8 @@ scale = Vector2(0.25, 0.25)
 position = Vector2(1894, 619)
 target_scene = "res://Scenes/Maps/map_1.tscn"
 
-[node name="entry_from_map_01" type="Marker2D" parent="." index="3"]
-position = Vector2(1834, 673)
+[node name="entry_from_map_1" type="Marker2D" parent="." index="3"]
+position = Vector2(1834, 668)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
 navigation_polygon = SubResource("NavigationPolygon_hyf0x")
@@ -53,6 +53,7 @@ navigation_polygon = SubResource("NavigationPolygon_hyf0x")
 position = Vector2(602, 688)
 rotation = -2.03156
 scale = Vector2(0.15, 0.15)
+note_text = ["Encuentras una nota en el suelo con unos escritos que dice:", "Aquellos que desean pasar deben dejar algo atras, solo entonces la señal cambiara. Una vez que se cruza el sendero ya no existe vuelta atras.a vez que se cruza el sendero ya no existe vuelta atras.", "Sientes un escalofrio que recorre tu cuerpo..."]
 
 [node name="BlockMov" type="Area2D" parent="." index="6"]
 script = ExtResource("6_hrm1w")

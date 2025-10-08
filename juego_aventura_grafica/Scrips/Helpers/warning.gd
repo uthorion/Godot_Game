@@ -32,3 +32,4 @@ func _on_dialog_finished():
 		# Modulate a gris oscuro (0.4 en todos los canales, 1 en alpha)
 		tween = create_tween()
 		tween.tween_property(sprite, "modulate", Color(0.4, 0.4, 0.4, 1.0), 1.0)
+	GAMESTATE.note_was_read = false

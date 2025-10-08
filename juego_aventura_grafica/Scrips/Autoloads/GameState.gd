@@ -2,51 +2,65 @@ extends Node
 const SAVE_PATH := "user://save_data.json"
 
 var previous_scene: String = ""
-var coming_from_cinematic := false
-var note_was_read := false
 
-var opened_chests: Array[Dictionary] = []
+var note_was_read := false 
+var collected_items: Array[String] = []  
 
-func has_opened(chest_id: int) -> bool:
-	for chest in opened_chests:
-		if chest.get("id") == chest_id:
-			return true
-	return false
+func _ready():
+	reset_session()
 
-#marca un cofre como abierto solo si no esta en la lista opened_chests
-func mark_chest_opened(chest_id: int, tipo: String = "cofre"):
-	if not has_opened(chest_id):
-		opened_chests.append({
-			"id": chest_id,
-			"tipo": tipo
-		})
+func reset_session() -> void:
+	previous_scene = ""
 
-func set_previous_scene():
+func new_game() -> void:
+	note_was_read = false
+	collected_items.clear()
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+
+func set_previous_scene() -> void:
 	previous_scene = get_tree().current_scene.scene_file_path
 
 func save_game() -> void:
-	var save_data = {
-		#"inventory": Inventory.to_dict(),
-		"opened_chests": opened_chests
+	var data := {
+		"note_was_read": note_was_read,
+		"collected_items": collected_items,
+		"previous_scene": previous_scene,
 	}
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	file.store_string(JSON.stringify(save_data))
-	file.close()
-	print("Juego guardado.")
+	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	f.store_string(JSON.stringify(data))
+	f.close()
+	print("Juego guardado en:", SAVE_PATH)
 
-func load_game() -> void:
+func load_game() -> bool:
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("No hay archivo de guardado.")
-		return
-	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	var data = file.get_as_text()
-	file.close()
+		return false
 
-	var parsed = JSON.parse_string(data)
-	if parsed == null:
-		print("Error al leer archivo de guardado.")
-		return
+	var f := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	f.close()
 
-	#Inventory.from_dict(parsed.get("inventory", []))
-	opened_chests = parsed.get("opened_chests", [])
+	if parsed == null or not (parsed is Dictionary):
+		printerr("Error al leer el archivo de guardado.")
+		return false
+
+	var data: Dictionary = parsed
+
+	note_was_read = data.get("note_was_read", false)
+
+	collected_items.clear()
+	for v in (data.get("collected_items", []) as Array):
+		if typeof(v) == TYPE_STRING:
+			collected_items.append(v)
+
+	previous_scene = data.get("previous_scene", "")
 	print("Juego cargado.")
+	return true
+
+func is_item_collected(uid: String) -> bool:
+	return uid in collected_items
+
+func mark_item_collected(uid: String) -> void:
+	if uid not in collected_items:
+		collected_items.append(uid)

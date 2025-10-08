@@ -1,20 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cld1ldhg5ua8s"]
+[gd_scene load_steps=5 format=3 uid="uid://cld1ldhg5ua8s"]
 
 [ext_resource type="Script" uid="uid://6l83tfi1fgdv" path="res://Scrips/Helpers/scene_selector.gd" id="1_abt6q"]
 [ext_resource type="FontFile" uid="uid://dyw18lmwefujw" path="res://Assets/Fonts/comic-sans-ms.ttf" id="2_0ox6p"]
+[ext_resource type="Texture2D" uid="uid://irdadtbqipmq" path="res://Assets/Backgrounds/Scene_selector.png" id="2_wtj77"]
+[ext_resource type="AudioStream" uid="uid://jref6chg4yqa" path="res://Assets/Sounds/effects/soundeffectmenu.mp3" id="4_yyp8u"]
 
 [node name="SceneSelector" type="Node2D"]
 script = ExtResource("1_abt6q")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
+[node name="sprite2d" type="Sprite2D" parent="."]
+position = Vector2(957, 537)
+texture = ExtResource("2_wtj77")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 333.0
@@ -25,18 +21,31 @@ theme_override_constants/separation = 25
 
 [node name="MapA" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.412738, 0.654421, 0.738826, 1)
 theme_override_fonts/font = ExtResource("2_0ox6p")
 theme_override_font_sizes/font_size = 70
 text = "Recordar todo aquello que quedo atras"
+flat = true
 
 [node name="MapB" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.67684, 0.183956, 0.20847, 1)
 theme_override_fonts/font = ExtResource("2_0ox6p")
 theme_override_font_sizes/font_size = 70
 text = "Seguir adelante sin mirar atras"
+flat = true
 
 [node name="MapC" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.776797, 0.462799, 0.893864, 1)
 theme_override_fonts/font = ExtResource("2_0ox6p")
 theme_override_font_sizes/font_size = 70
 text = "¿Algo mas quiza?"
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yyp8u")
+
+[connection signal="mouse_entered" from="VBoxContainer/MapA" to="." method="_on_map_a_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/MapB" to="." method="_on_map_b_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/MapC" to="." method="_on_map_c_mouse_entered"]

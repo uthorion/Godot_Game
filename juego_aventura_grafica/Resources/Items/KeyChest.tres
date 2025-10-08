@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cnavxyqbp74to"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cnavxyqbp74to"]
 
 [ext_resource type="Texture2D" uid="uid://bkbyxg8u54wut" path="res://Assets/Items/Llave.png" id="1_ytu0v"]
 [ext_resource type="Script" uid="uid://bu14di28b76p" path="res://Resources/InventorySystem/ItemData.gd" id="2_evdmt"]
+[ext_resource type="AudioStream" uid="uid://dioq3gwqcn3ne" path="res://Assets/Sounds/effects/Keys_pickup.mp3" id="3_evdmt"]
 
 [resource]
 script = ExtResource("2_evdmt")
 id = 1
 type = "Usable"
 icon = ExtResource("1_ytu0v")
+sound = ExtResource("3_evdmt")
 metadata/_custom_type_script = "uid://bu14di28b76p"

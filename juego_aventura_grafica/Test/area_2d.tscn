@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b80irndp3dh4l"]
+
+[ext_resource type="Script" uid="uid://vo1u0j2xqmaw" path="res://Test/area_2d.gd" id="1_myog3"]
+[ext_resource type="PackedScene" uid="uid://ci6hu2mbofh2f" path="res://Scenes/SpecialScenes/letter_tile.tscn" id="2_myog3"]
+[ext_resource type="Texture2D" uid="uid://c5w4dukuyvh03" path="res://Assets/Items/LettersPuzzle/LetterO.png" id="3_gxo8q"]
+
+[node name="Node2d" type="Node2D"]
+position = Vector2(406, 272)
+script = ExtResource("1_myog3")
+
+[node name="LetterTile" parent="." instance=ExtResource("2_myog3")]
+texture = ExtResource("3_gxo8q")

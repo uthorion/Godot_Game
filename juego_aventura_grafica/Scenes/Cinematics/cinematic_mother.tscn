@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl3obc4oe0j8y"]
+
+[ext_resource type="Script" uid="uid://bxatn0g3qt5ki" path="res://Scrips/maps/Cinematics/cinematic_mother.gd" id="1_xfa0v"]
+[ext_resource type="Texture2D" uid="uid://ddrxbk5gilarf" path="res://Assets/Cinematics/Recuerdo leve.png" id="2_xfa0v"]
+
+[node name="Cinematic_Mother" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfa0v")
+dialog = ["El olor a hierba, el sol sobre mi cara y el ruido de la gente disfrutando del dia...", "Una sensacion calida me invadia el cuerpo, y mi madre frente a mi mirando hacia adelante..."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 756.0
+texture = ExtResource("2_xfa0v")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CinematicLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -322.0
+offset_right = 1926.0
+grow_vertical = 0
+bbcode_enabled = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

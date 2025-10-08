@@ -8,10 +8,7 @@ func _ready():
 
 func setup_player():
 	move_player_to_entry_point()
-	print("Valor en map_0:", GAMESTATE.coming_from_cinematic)
-	if GAMESTATE.coming_from_cinematic: 
-		GESTORDIALOGOS.show_external_dialog(Start_text)
-		GAMESTATE.coming_from_cinematic = false
+	GESTORDIALOGOS.show_external_dialog(Start_text)
 
 func _on_button_mouse_entered():
 	CURSORMANAGER.set_cursor_mano()

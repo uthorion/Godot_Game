@@ -31,7 +31,7 @@ func to_dict() -> Array:
 	for item in items:
 		save_array.append({
 			"id": item.id,
-			"type": item.type,     # ← usa el campo de ItemData
+			"type": item.type,
 			"icon": item.icon.resource_path if item.icon else ""
 		})
 	return save_array
@@ -43,7 +43,6 @@ func from_dict(data: Array) -> void:
 			var new_item := ItemData.new()
 			new_item.id = d.get("id", -1)
 			new_item.type = d.get("type", "")
-			
 			var icon_path: String = d.get("icon", "")
 			if icon_path != "":
 				new_item.icon = load(icon_path)

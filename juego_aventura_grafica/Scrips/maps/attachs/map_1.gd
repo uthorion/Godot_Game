@@ -13,7 +13,6 @@ func _ready():
 		secretArea.visible = true
 		secretArea.set_deferred("monitoring", true)
 		secretArea.set_deferred("monitorable", true)
-		
 	else:
 		secretArea.visible = false
 		secretArea.monitoring = false

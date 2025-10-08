@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmxcsorhi7l5w"]
+[gd_scene load_steps=7 format=3 uid="uid://bmxcsorhi7l5w"]
 
 [ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_dr6us"]
 [ext_resource type="Script" uid="uid://c5kbg0p8q2vos" path="res://Scrips/maps/attachs/map_2.gd" id="2_i7a3l"]
 [ext_resource type="Texture2D" uid="uid://dptueb2bkjehg" path="res://Assets/Backgrounds/Tercer escenario.png" id="2_w84yv"]
+[ext_resource type="AudioStream" uid="uid://v6xyl1bv5twv" path="res://Assets/Sounds/effects/Lock_opening.mp3" id="4_gvf3y"]
 [ext_resource type="PackedScene" uid="uid://b4knn0rl5abd6" path="res://Scenes/Objects/Interactives/interactive_note.tscn" id="4_v3gvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7a3l"]
@@ -24,6 +25,10 @@ texture = ExtResource("2_w84yv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(944.5, 534)
 shape = SubResource("RectangleShape2D_i7a3l")
+
+[node name="LockSound" type="AudioStreamPlayer2D" parent="Area2D" index="1"]
+stream = ExtResource("4_gvf3y")
+volume_db = 24.0
 
 [node name="Note" parent="." index="2" instance=ExtResource("4_v3gvg")]
 position = Vector2(1733, 1061)

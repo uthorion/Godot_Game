@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://017q2a48c0mo"]
+[gd_scene load_steps=12 format=3 uid="uid://017q2a48c0mo"]
 
 [ext_resource type="PackedScene" uid="uid://bhn5pmk5j6ywl" path="res://Scenes/map_base.tscn" id="1_cphd2"]
 [ext_resource type="Texture2D" uid="uid://cskkgv1oc4327" path="res://Assets/Backgrounds/Segundo escenario.png" id="2_1efcw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://job6tyfgf7eb" path="res://Characters/npc_01.tscn" id="5_dxmm1"]
 [ext_resource type="PackedScene" uid="uid://bygx6as0frs7w" path="res://Scenes/inventory/pickup.tscn" id="6_436e4"]
 [ext_resource type="Resource" uid="uid://cnavxyqbp74to" path="res://Resources/Items/KeyChest.tres" id="7_w8qif"]
+[ext_resource type="PackedScene" uid="uid://bdfkvll36ijgk" path="res://Scenes/SpecialScenes/SavePoint.tscn" id="9_04oj5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_fh0yf"]
 vertices = PackedVector2Array(1519.42, 910.992, 141.102, 947.891, 194.523, 918.641, 772.242, 785.031, 1610.42, 758.797, 1587.78, 711.398, 1396.23, 596.477, 1575.49, 575.242, 1851.25, 695.773, 1615.65, 747.758, 1790.39, 941.094, 46.3516, 719.313, 40.1172, 649.227, 258.609, 781.391, 186.578, 825.461, 259.359, 795.547)
@@ -26,28 +27,34 @@ scale = Vector2(0.997543, 1.00185)
 texture = ExtResource("2_1efcw")
 
 [node name="Player" parent="." index="1" instance=ExtResource("3_04oj5")]
-position = Vector2(94, 714)
+position = Vector2(87, 613)
 scale = Vector2(0.35, 0.35)
 
-[node name="TransitionArea2" parent="." index="2" instance=ExtResource("4_bawlw")]
+[node name="TransitionArea" parent="." index="2" instance=ExtResource("4_bawlw")]
+visible = false
+position = Vector2(26, 656)
+target_scene = "res://Scenes/Maps/map_0.tscn"
+
+[node name="TransitionArea2" parent="." index="3" instance=ExtResource("4_bawlw")]
 position = Vector2(1481, 581)
 target_scene = "res://Scenes/Maps/map_2.tscn"
 
-[node name="entry_from_map_00" type="Marker2D" parent="." index="3"]
-position = Vector2(107, 812)
+[node name="entry_from_map_0" type="Marker2D" parent="." index="4"]
+position = Vector2(133, 745)
 
-[node name="entry_from_map_02" type="Marker2D" parent="." index="4"]
-position = Vector2(1504, 682)
+[node name="entry_from_map_2" type="Marker2D" parent="." index="5"]
+position = Vector2(1526, 552)
 
-[node name="NPC_01" parent="." index="5" instance=ExtResource("5_dxmm1")]
+[node name="NPC_01" parent="." index="6" instance=ExtResource("5_dxmm1")]
 position = Vector2(1112, 718)
 scale = Vector2(0.35, 0.35)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="6"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="7"]
+visible = false
 position = Vector2(-1, 12)
 navigation_polygon = SubResource("NavigationPolygon_fh0yf")
 
-[node name="Pickup" parent="." index="7" groups=["player"] instance=ExtResource("6_436e4")]
+[node name="Pickup" parent="." index="8" groups=["player"] instance=ExtResource("6_436e4")]
 position = Vector2(345, 686)
 ItemResource = ExtResource("7_w8qif")
 isPlayerRequired = true
@@ -56,3 +63,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup" index="1"]
 shape = SubResource("CircleShape2D_56ys2")
+
+[node name="SavePoint" parent="." index="9" instance=ExtResource("9_04oj5")]
+visible = false
+position = Vector2(1672, 863)

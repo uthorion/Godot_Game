@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjgf4d7adb1jb"]
+
+[ext_resource type="Script" uid="uid://htxbiwtmjpm2" path="res://Scrips/Helpers/ayuda.gd" id="1_tcmiw"]
+[ext_resource type="Texture2D" uid="uid://cd8pmpq6d2k2j" path="res://Assets/help.png" id="1_x3mai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcmiw"]
+size = Vector2(1943, 1099)
+
+[node name="Ayuda" type="Node2D"]
+script = ExtResource("1_tcmiw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(960, 542)
+texture = ExtResource("1_x3mai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(961.5, 539.5)
+shape = SubResource("RectangleShape2D_tcmiw")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
